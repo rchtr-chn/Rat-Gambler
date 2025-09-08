@@ -1,0 +1,549 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|c:\\users\\rchtrchn\\documents\\github\\brackeysgamejam2025\\assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\deckmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deckmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\shopmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\alldrawonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\alldrawonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\drawonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\drawonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\effectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\effectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\draguiobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\draguiobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\uimanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cookiemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cookiemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\tutorialmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tutorialmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\swapfieldcards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\swapfieldcards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardmovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardmovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\trashbinscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\trashbinscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\handmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\handmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\buycardscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buycardscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\audiomanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\fieldmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fieldmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\carddisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carddisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\copyfieldcards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\copyfieldcards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\minus3pointsany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\minus3pointsany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\add2pointsall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\add2pointsall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\add3pointsany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\add3pointsany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\drawtwopickonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\drawtwopickonecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardeffects\\minus2pointsall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffects\\minus2pointsall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\optionsmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\optionsmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\cardflipscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardflipscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F5F36A1-1455-8081-4338-6BB8D0A3D470}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\FinalBossTransitionScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FinalBossTransitionScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TutorialManagerScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\TutorialManagerScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\SceneLoadListenerScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\SceneLoadListenerScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TopUIScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\TopUIScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SceneManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\SceneManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\SceneManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneManagerScript.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T05:39:30.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TutorialManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\TutorialManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TutorialManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\TutorialManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TutorialManagerScript.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T05:08:10.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TrashbinScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\TrashbinScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TrashbinScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\TrashbinScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TrashbinScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T17:05:49.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BuyCardScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\BuyCardScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BuyCardScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\BuyCardScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BuyCardScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T15:25:47.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FinalBossTransitionScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\FinalBossTransitionScript.cs",
+              "RelativeDocumentMoniker": "Assets\\FinalBossTransitionScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\FinalBossTransitionScript.cs",
+              "RelativeToolTip": "Assets\\FinalBossTransitionScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T07:57:00.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TutorialManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TutorialManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\TutorialManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TutorialManagerScript.cs",
+              "RelativeToolTip": "Assets\\TutorialManagerScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T03:46:49.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EffectManager.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\EffectManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\EffectManager.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\EffectManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\EffectManager.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAwwHUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T08:10:22.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShopManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\ShopManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\ShopManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShopManagerScript.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEEAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T04:33:49.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AudioManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\AudioManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\AudioManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioManagerScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T09:31:07.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SceneLoadListenerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\SceneLoadListenerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\SceneLoadListenerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\SceneLoadListenerScript.cs",
+              "RelativeToolTip": "Assets\\SceneLoadListenerScript.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T14:59:14.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "TopUIScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TopUIScript.cs",
+              "RelativeDocumentMoniker": "Assets\\TopUIScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\TopUIScript.cs",
+              "RelativeToolTip": "Assets\\TopUIScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T13:38:26.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CookieManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CookieManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CookieManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CookieManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CookieManagerScript.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowFMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T09:56:29.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DragUIObject.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\DragUIObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DragUIObject.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\DragUIObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DragUIObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T04:54:53.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UIManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\UIManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\UIManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIManagerScript.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAmwIQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T11:41:50.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeckManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\DeckManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DeckManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\DeckManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DeckManagerScript.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T09:12:41.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManagerScript.cs",
+              "ViewState": "AgIAANYBAAAAAAAAAAAzwPYBAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T05:39:20.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FieldManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\FieldManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FieldManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\FieldManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FieldManagerScript.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAApwFwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T15:17:24.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HandManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\HandManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HandManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\HandManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HandManagerScript.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T13:22:27.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DrawOneCard.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\DrawOneCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\DrawOneCard.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\DrawOneCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\DrawOneCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:23:47.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DrawTwoPickOneCard.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\DrawTwoPickOneCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\DrawTwoPickOneCard.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\DrawTwoPickOneCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\DrawTwoPickOneCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:23:19.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AllDrawOneCard.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\AllDrawOneCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\AllDrawOneCard.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\AllDrawOneCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\AllDrawOneCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:22:44.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Add3PointsAny.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Add3PointsAny.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\Add3PointsAny.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Add3PointsAny.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\Add3PointsAny.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:22:04.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Minus3PointsAny.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Minus3PointsAny.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\Minus3PointsAny.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Minus3PointsAny.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\Minus3PointsAny.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:20:42.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Add2PointsAll.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Add2PointsAll.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\Add2PointsAll.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Add2PointsAll.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\Add2PointsAll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:20:00.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Minus2PointsAll.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Minus2PointsAll.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\Minus2PointsAll.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\Minus2PointsAll.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\Minus2PointsAll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:19:16.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CopyFieldCards.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\CopyFieldCards.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\CopyFieldCards.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\CopyFieldCards.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\CopyFieldCards.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:18:20.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SwapFieldCards.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\SwapFieldCards.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffects\\SwapFieldCards.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffects\\SwapFieldCards.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffects\\SwapFieldCards.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:17:25.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CardEffect.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardEffect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T12:27:47.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OptionsManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\OptionsManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\OptionsManagerScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\OptionsManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\OptionsManagerScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T05:54:02.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CardFlipScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardFlipScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardFlipScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardFlipScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardFlipScript.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowEIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T02:44:26.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CardMovementScript.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardMovementScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardMovementScript.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardMovementScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardMovementScript.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvyEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T14:45:41.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CardDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardDisplay.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardDisplay.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\CardDisplay.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T13:54:12.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\Card.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Card.cs",
+              "ToolTip": "C:\\Users\\rchtrchn\\Documents\\github\\BrackeysGameJam2025\\Assets\\Scripts\\Card.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Card.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T12:11:14.417Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

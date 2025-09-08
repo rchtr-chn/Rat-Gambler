@@ -1,0 +1,23 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AudioManagerScript">
+			<method name="PlaySfx"/>
+		</type>
+		<type fullname="HandManagerScript">
+			<method name="ReturnAllCardsToDeck"/>
+		</type>
+		<type fullname="SceneManagerScript">
+			<method name="ExitGame"/>
+			<method name="LevelSelectScene"/>
+			<method name="OpenMainMenu"/>
+			<method name="OpenMainMenu"/>
+			<method name="OpenShopScene"/>
+			<method name="OpenShopScene"/>
+			<method name="PlayGame"/>
+			<method name="PlayGame"/>
+		</type>
+		<type fullname="TutorialManagerScript">
+			<method name="ConfirmWager"/>
+		</type>
+	</assembly>
+</linker>
