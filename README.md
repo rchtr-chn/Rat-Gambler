@@ -13,6 +13,8 @@ One last hand… one last cookie… one last chance at financial freedom 👑 .
 <b>Most art assets are made by our game artists, aside from an orange point sign and trashbin vector</b>
 <b>All SFX can be found in Pixabay </b>
 
+###
+
 <b>Team:</b>
 - Richter Cheniago (Programmer)
 - Sony Aliem (Game designer and artist)
