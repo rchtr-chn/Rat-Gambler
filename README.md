@@ -14,6 +14,6 @@ One last hand… one last cookie… one last chance at financial freedom 👑 .
 <b>All SFX can be found in Pixabay </b>
 
 <b>Team:</b>
-<b>- Richter Cheniago (Programmer)</b>
-<b>- Sony Aliem (Game designer and artist)</b>
-<b>- Melvern Sjah (Game designer and artist)</b>
+- Richter Cheniago (Programmer)
+- Sony Aliem (Game designer and artist)
+- Melvern Sjah (Game designer and artist)
