@@ -10,8 +10,12 @@ One last hand… one last cookie… one last chance at financial freedom 👑 .
 
 <h1>Project Information</h1>
 Unity Editor Version: 6000.2.2f1
+###
 Most art assets are made by our game artists, aside from an orange point sign and trashbin vector
+###
 All SFX can be found in Pixabay
+
+###
 
 ###
 
