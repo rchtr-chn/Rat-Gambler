@@ -22,6 +22,6 @@ Will you claw your way out of debt, or will the mob bury you under a mountain of
 itch.io: https://rchtr-chn.itch.io/rat-gambler
 
 <h1>Controls:</h1>
-|        Input       |       Function      |
+|Input|Function|
 |--------------------|---------------------|
 |Hold and move cursor|Select and play cards|
