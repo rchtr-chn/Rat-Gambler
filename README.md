@@ -5,6 +5,15 @@
   One last hand… one last cookie… one last chance at financial freedom.<br/>
   Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
+<h1>⬇️ Game Pages</h1>
+  itch.io: https://rchtr-chn.itch.io/rat-gambler
+  
+<h1>🎮 Controls</h1>
+
+  | Input | Function |
+  | -------------------- | --------------------- |
+  | Hold and move cursor | Select and play cards |
+  
 <h1>📋 Project Information</h1>
 
   ![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=flat-square&logo=unity) <br/>
@@ -17,11 +26,9 @@
   - Sony Aliem (Game designer and artist)
   - Melvern Sjah (Game designer and artist)
 
-<h1>⬇️ Game Pages:</h1>
-  itch.io: https://rchtr-chn.itch.io/rat-gambler
+<h1>💡 My Contributions</h1>
 
-<h1>🎮 Controls:</h1>
+  as the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, etc.
 
-  | Input | Function |
-  | -------------------- | --------------------- |
-  | Hold and move cursor | Select and play cards |
+
+
