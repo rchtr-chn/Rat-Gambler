@@ -1,20 +1,20 @@
-<h1>📚 Overview</h1>
+<h2>📚 Overview</h2>
   You’re a down-on-your-luck rat who made one very bad deal with the Rat Mafia.<br/>
   Now, buried in debt and cornered by crooks, your only way out is to gamble for cookies… because in the underworld, cookies are currency.<br/>
   At the end of the line, you’ll gamble it all against the Rat Mafia Boss.
   One last hand… one last cookie… one last chance at financial freedom.<br/>
   Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
-<h1>⬇️ Game Pages</h1>
+<h2>⬇️ Game Pages</h2>
   itch.io: https://rchtr-chn.itch.io/rat-gambler
   
-<h1>🎮 Controls</h1>
+<h2>🎮 Controls</h2>
 
   | Input | Function |
   | -------------------- | --------------------- |
   | Hold and move cursor | Select and play cards |
   
-<h1>📋 Project Information</h1>
+<h2>📋 Project Information</h2>
 
   ![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=flat-square&logo=unity) <br/>
   Game Build: ![WebGL](https://img.shields.io/badge/WebGL-990000.svg?style=flat-square&logo=WebGL) ![Windows](https://img.shields.io/badge/Windows-004fe1.svg?style=flat-square&logo=windows) <br/>
@@ -26,7 +26,7 @@
   - Sony Aliem (Game designer and artist)
   - Melvern Sjah (Game designer and artist)
 
-<h1>💡 My Contributions</h1>
+<h2>💡 My Contributions</h2>
 
   as the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, etc.
 
