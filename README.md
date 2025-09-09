@@ -38,7 +38,7 @@
   | Script | Description |
   | ------ | ----------- |
   | `DeckManagerScript.cs` | Manages starting deck and saves any modification done to deck by player |
-  | `HandManagerScript.cs` | Gets deck from `DeckManagerScript.cs` to be drawn on hand |
+  | `HandManagerScript.cs` | Receives cards from `DeckManagerScript.cs` to be drawn on hand and returned to when needed|
   | `GameManagerScript.cs` | Organizes and centralized other minor managers and manages the turn-based system |
   | `ShopManagerScript.cs` | Manages the shop's cards to be displayed and sold to the player |
   | `Card.cs` | Blueprint for SOs that will carry a card's value and the potential card effect |
