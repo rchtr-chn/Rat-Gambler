@@ -5,7 +5,7 @@ At the end of the line, you’ll gamble it all against the Rat Mafia Boss.
 One last hand… one last cookie… one last chance at financial freedom.<br/>
 Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
-<h1>📜 Project Information</h1>
+<h1>📄 Project Information</h1>
 Unity Editor Version: 6000.2.2f1<br/>
 Most art assets are made by our game artists, aside from an orange point sign and trashbin vector<br/>
 All SFX can be found in Pixabay<br/>
