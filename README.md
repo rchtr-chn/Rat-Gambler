@@ -20,10 +20,10 @@ All SFX can be found in ![Pixabay](https://img.shields.io/badge/Pixabay-191B26.s
 - Sony Aliem (Game designer and artist)
 - Melvern Sjah (Game designer and artist)
 
-<h1>Game Pages:</h1>
+<h1>📜 Game Pages:</h1>
 itch.io: https://rchtr-chn.itch.io/rat-gambler
 
-<h1>Controls:</h1>
+<h1>🎮 Controls:</h1>
 
 | Input | Function |
 | -------------------- | --------------------- |
