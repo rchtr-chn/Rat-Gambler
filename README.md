@@ -6,11 +6,12 @@ One last hand… one last cookie… one last chance at financial freedom.<br/>
 Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
 <h1>📄 Project Information</h1>
-- Unity Editor Version: 6000.2.2f1<br/>
-- [![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=for-the-badge&logo=unity)]
-- Game built in WebGL and for Windows<br/>
+
+![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=for-the-badge&logo=unity) <br/>
+Game Build: ![WebGL](https://img.shields.io/badge/WebGL-990000.svg?style=for-the-badge&logo=WebGL) ![Windows](https://img.shields.io/badge/Windows-004fe1.svg?style=for-the-badge&logo=windows)
 - Most art assets are made by our game artists, aside from an orange point sign and trashbin vector<br/>
 - All SFX can be found in Pixabay<br/>
+
 
 ###
 
