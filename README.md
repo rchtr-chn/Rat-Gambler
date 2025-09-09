@@ -13,6 +13,6 @@ All SFX can be found in Pixabay<br/>
 ###
 
 <b>Team:</b>
-- Richter Cheniago (Programmer)
+- Richter Cheniago (Game programmer)
 - Sony Aliem (Game designer and artist)
 - Melvern Sjah (Game designer and artist)
