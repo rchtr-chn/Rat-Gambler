@@ -7,10 +7,10 @@ Will you claw your way out of debt, or will the mob bury you under a mountain of
 
 <h1>📄 Project Information</h1>
 
-![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=for-the-badge&logo=unity) <br/>
-Game Build: ![WebGL](https://img.shields.io/badge/WebGL-990000.svg?style=for-the-badge&logo=WebGL) ![Windows](https://img.shields.io/badge/Windows-004fe1.svg?style=for-the-badge&logo=windows)
-- Most art assets are made by our game artists, aside from an orange point sign and trashbin vector<br/>
-- All SFX can be found in Pixabay<br/>
+![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=flat-square&logo=unity) <br/>
+Game Build: ![WebGL](https://img.shields.io/badge/WebGL-990000.svg?style=flat-square&logo=WebGL) ![Windows](https://img.shields.io/badge/Windows-004fe1.svg?style=flat-square&logo=windows) <br/> <br/>
+Most art assets are made by our game artists, aside from orange point sign and trashbin vector from ![Pixabay](https://img.shields.io/badge/Pixabay-191B26.svg?style=flat-square&logo=Pixabay) <br/>
+All SFX can be found in ![Pixabay](https://img.shields.io/badge/Pixabay-191B26.svg?style=flat-square&logo=Pixabay) <br/>
 
 
 ###
