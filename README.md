@@ -22,9 +22,9 @@
   All SFX can be found in ![Pixabay](https://img.shields.io/badge/Pixabay-191B26.svg?style=flat-square&logo=Pixabay) <br/> <br/>
   
   <b>Team:</b>
-  - Richter Cheniago (Game programmer)
+  - <a href="https://github.com/rchtr-chn">Richter Cheniago</a> (Game programmer)
   - Sony Aliem (Game designer and artist)
-  - Melvern Sjah (Game designer and artist)
+  - <a href="https://www.behance.net/epenaja">Melvern Sjah</a> (Game designer and artist)
 
 <h2>💡 My Contributions</h2>
 
