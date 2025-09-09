@@ -7,6 +7,7 @@ Will you claw your way out of debt, or will the mob bury you under a mountain of
 
 <h1>📄 Project Information</h1>
 Unity Editor Version: 6000.2.2f1<br/>
+Game built in WebGL and for Windows
 Most art assets are made by our game artists, aside from an orange point sign and trashbin vector<br/>
 All SFX can be found in Pixabay<br/>
 
