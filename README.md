@@ -42,4 +42,5 @@
   | `GameManagerScript.cs` | Organizes and centralized other minor managers and manages the turn-based system |
   | `ShopManagerScript.cs` | Manages the shop's cards to be displayed and sold to the player |
   | `Card.cs` | Blueprint for SOs that will carry a card's value and the potential card effect |
+  | etc. |
 
