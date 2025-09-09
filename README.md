@@ -7,7 +7,6 @@
   One last hand… one last cookie… one last chance at financial freedom.<br/>
   Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
-<br/>
 
 <h2>⬇️ Game Pages</h2>
   itch.io: https://rchtr-chn.itch.io/rat-gambler
