@@ -1,6 +1,6 @@
 <h1>📚 Overview</h1>
 <b>🐀You’re a down-on-your-luck rat who made one very bad deal with the Rat Mafia 💼.
-
+<br/>
 🍪Now, buried in debt and cornered by crooks, your only way out is to gamble for cookies… because in the underworld, cookies are currency 💸.
 
 🐀At the end of the line, you’ll gamble it all against the Rat Mafia Boss.
