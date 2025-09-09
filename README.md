@@ -5,7 +5,7 @@
   One last hand… one last cookie… one last chance at financial freedom.<br/>
   Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
-<h1>📄 Project Information</h1>
+<h1>📋 Project Information</h1>
 
   ![Unity Version 6000.2.2f1](https://img.shields.io/badge/Unity_Version-6000.2.2f1-FFFFFF.svg?style=flat-square&logo=unity) <br/>
   Game Build: ![WebGL](https://img.shields.io/badge/WebGL-990000.svg?style=flat-square&logo=WebGL) ![Windows](https://img.shields.io/badge/Windows-004fe1.svg?style=flat-square&logo=windows) <br/>
