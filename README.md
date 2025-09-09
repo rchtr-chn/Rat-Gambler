@@ -17,3 +17,6 @@ Will you claw your way out of debt, or will the mob bury you under a mountain of
 - Richter Cheniago (Game programmer)
 - Sony Aliem (Game designer and artist)
 - Melvern Sjah (Game designer and artist)
+
+  <h1>Game Pages:</h1>
+  itch.io: https://rchtr-chn.itch.io/rat-gambler
