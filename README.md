@@ -31,7 +31,7 @@
 
 <h2>💡 My Contributions</h2>
 
-  as the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, etc.
+  As the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, etc.
 
 <h2>📜 Scripts</h2>
 
