@@ -1,34 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManagerScript : MonoBehaviour
 {
     [Header("---------------------- Audio Source ----------------------")]
-    public AudioSource musicSource;
-    public AudioSource effectSource;
+    public AudioSource MusicSource;
+    public AudioSource EffectSource;
 
 
     [Header("----------------------- Audio Clip -----------------------")]
-    public AudioClip hoverCard;
-    public AudioClip shuffleDeck;
-    public AudioClip drawCard;
-    public AudioClip playCard;
-    public AudioClip buttonPress;
-    public AudioClip winSound;
-    public AudioClip loseSound;
-    public AudioClip trashCard;
-    public AudioClip buyCard;
+    public AudioClip HoverCard;
+    public AudioClip ShuffleDeck;
+    public AudioClip DrawCard;
+    public AudioClip PlayCard;
+    public AudioClip ButtonPress;
+    public AudioClip WinSound;
+    public AudioClip LoseSound;
+    public AudioClip TrashCard;
+    public AudioClip BuyCard;
 
 
 
     [Header("----------------------- BGM Clips -----------------------")]
-    public AudioClip startMenuBGM;
-    public AudioClip levelSelectBGM;
-    public AudioClip mainGameplayBGM;
+    public AudioClip StartMenuBGM;
+    public AudioClip LevelSelectBGM;
+    public AudioClip MainGameplayBGM;
 
-    public static AudioManagerScript instance;
+    public static AudioManagerScript Instance;
 
     //private void Awake()
     //{
@@ -45,16 +42,16 @@ public class AudioManagerScript : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip = startMenuBGM;
-        musicSource.loop = true;
-        musicSource.Play();
+        MusicSource.clip = StartMenuBGM;
+        MusicSource.loop = true;
+        MusicSource.Play();
     }
 
     public void PlaySfx(AudioClip clip)
     {
-        if (effectSource != null && clip != null)
+        if (EffectSource != null && clip != null)
         {
-            effectSource.PlayOneShot(clip);
+            EffectSource.PlayOneShot(clip);
         }
         else
         {
@@ -64,9 +61,9 @@ public class AudioManagerScript : MonoBehaviour
 
     public void StopMusic()
     {
-        if (musicSource != null)
+        if (MusicSource != null)
         {
-            musicSource.Stop();
+            MusicSource.Stop();
         }
         else
         {

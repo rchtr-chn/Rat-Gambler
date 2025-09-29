@@ -7,39 +7,39 @@ using UnityEngine.UI;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    AudioManagerScript audioManager;
-    public GameObject finalBossTransition;
-    CookieManagerScript cookieManager;
-    GameManagerScript gameManager;
-    public Button[] buttons;
+    private AudioManagerScript _audioManager;
+    public GameObject FinalBossTransition;
+    private CookieManagerScript _cookieManager;
+    private GameManagerScript _gameManager;
+    public Button[] Buttons;
 
-    public GameObject errorMessage;
+    public GameObject ErrorMessage;
 
     public void PlayGame()
     {
-        audioManager.PlaySfx(audioManager.buttonPress);
+        _audioManager.PlaySfx(_audioManager.ButtonPress);
         SceneManager.LoadScene("GameplayScene");
     }
     public void OpenShopScene()
     {
-        audioManager.PlaySfx(audioManager.buttonPress);
+        _audioManager.PlaySfx(_audioManager.ButtonPress);
         SceneManager.LoadScene("ShopScene");
     }
     public void OpenMainMenu()
     {
-        audioManager.PlaySfx(audioManager.buttonPress);
+        _audioManager.PlaySfx(_audioManager.ButtonPress);
         SceneManager.LoadScene("StartMenuScene");
     }
     public void GameOver()
     {
-        audioManager.musicSource.Stop();
-        audioManager.PlaySfx(audioManager.loseSound);
-        cookieManager.playerCookies = 50;
-        gameManager.selectedDifficulty = 1;
-        gameManager.turnsLeft = 5;
-        gameManager.debtAmount = 500;
-        gameManager.PlayerDeckManagerScript.playingDeck.Clear();
-        gameManager.PlayerDeckManagerScript.playingDeck.AddRange(gameManager.PlayerDeckManagerScript.resourceDeck);
+        _audioManager.MusicSource.Stop();
+        _audioManager.PlaySfx(_audioManager.LoseSound);
+        _cookieManager.PlayerCookies = 50;
+        _gameManager.SelectedDifficulty = 1;
+        _gameManager.TurnsLeft = 5;
+        _gameManager.DebtAmount = 500;
+        _gameManager.PlayerDeckManagerScript.PlayingDeck.Clear();
+        _gameManager.PlayerDeckManagerScript.PlayingDeck.AddRange(_gameManager.PlayerDeckManagerScript.ResourceDeck);
         SceneManager.LoadScene("GameOverScene");
     }
 
@@ -50,20 +50,20 @@ public class SceneManagerScript : MonoBehaviour
 
     public void LevelSelectScene()
     {
-        if (gameManager.turnsLeft > 0)
+        if (_gameManager.TurnsLeft > 0)
         {
-            audioManager.PlaySfx(audioManager.buttonPress);
+            _audioManager.PlaySfx(_audioManager.ButtonPress);
             SceneManager.LoadScene("LevelSelectScene");
         }
         else
         {
-            if(cookieManager.playerCookies < gameManager.debtAmount)
+            if(_cookieManager.PlayerCookies < _gameManager.DebtAmount)
             {
                 GameOver();
             }
             else
             {
-                gameManager.selectedDifficulty = 5;
+                _gameManager.SelectedDifficulty = 5;
                 PlayGame();
             }
 
@@ -72,42 +72,42 @@ public class SceneManagerScript : MonoBehaviour
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManagerScript>();
-        gameManager = FindObjectOfType<GameManagerScript>();
-        cookieManager = FindObjectOfType<CookieManagerScript>();
+        _audioManager = FindObjectOfType<AudioManagerScript>();
+        _gameManager = FindObjectOfType<GameManagerScript>();
+        _cookieManager = FindObjectOfType<CookieManagerScript>();
 
-        if (gameManager.selectedDifficulty == 5 && SceneManager.GetActiveScene().name == "GameplayScene")
+        if (_gameManager.SelectedDifficulty == 5 && SceneManager.GetActiveScene().name == "GameplayScene")
         {
-            if(finalBossTransition == null)
+            if(FinalBossTransition == null)
             {
-                finalBossTransition = GameObject.Find("FinalBossTransition");
+                FinalBossTransition = GameObject.Find("FinalBossTransition");
             }
-            finalBossTransition.SetActive(true);
+            FinalBossTransition.SetActive(true);
         }
 
         if (SceneManager.GetActiveScene().name == "LevelSelectScene")
         {
-            buttons[0].onClick.AddListener(() => ChangeValue(2));
-            buttons[0].onClick.AddListener(() => PlayGame());
+            Buttons[0].onClick.AddListener(() => ChangeValue(2));
+            Buttons[0].onClick.AddListener(() => PlayGame());
 
-            if(cookieManager.playerCookies < 50)
+            if(_cookieManager.PlayerCookies < 50)
             {
-                buttons[1].onClick.AddListener(() => DisplayErrorMessage());
+                Buttons[1].onClick.AddListener(() => DisplayErrorMessage());
             }
             else
             {
-                buttons[1].onClick.AddListener(() => ChangeValue(3));
-                buttons[1].onClick.AddListener(() => PlayGame());
+                Buttons[1].onClick.AddListener(() => ChangeValue(3));
+                Buttons[1].onClick.AddListener(() => PlayGame());
             }
 
-            if(cookieManager.playerCookies < 100)
+            if(_cookieManager.PlayerCookies < 100)
             {
-                buttons[2].onClick.AddListener(() => DisplayErrorMessage());
+                Buttons[2].onClick.AddListener(() => DisplayErrorMessage());
             }
             else
             {
-                buttons[2].onClick.AddListener(() => ChangeValue(4));
-                buttons[2].onClick.AddListener(() => PlayGame());
+                Buttons[2].onClick.AddListener(() => ChangeValue(4));
+                Buttons[2].onClick.AddListener(() => PlayGame());
             }
 
             //if (cookieManager.playerCookies < 100)
@@ -123,13 +123,13 @@ public class SceneManagerScript : MonoBehaviour
 
     void ChangeValue(int value)
     {
-        gameManager.selectedDifficulty = value;
-        Debug.Log("Selected difficulty: " + gameManager.selectedDifficulty + "; Input: " + value);
+        _gameManager.SelectedDifficulty = value;
+        Debug.Log("Selected difficulty: " + _gameManager.SelectedDifficulty + "; Input: " + value);
     }
 
     void DisplayErrorMessage()
     {
-        errorMessage.SetActive(true);
-        errorMessage.GetComponentInChildren<Text>().text = "Not enough Cookies!";
+        ErrorMessage.SetActive(true);
+        ErrorMessage.GetComponentInChildren<Text>().text = "Not enough Cookies!";
     }
 }

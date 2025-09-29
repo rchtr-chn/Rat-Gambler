@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FinalBossTransitionScript : MonoBehaviour
 {
-    public GameObject obj;
-    public Image background;
-    public Text text;
+    public GameObject Obj;
+    public Image Background;
+    public Text Text;
     void Start()
     {
         StartCoroutine(fadeTransition());
@@ -21,11 +20,11 @@ public class FinalBossTransitionScript : MonoBehaviour
         while (timer > 0f)
         {
             timer -= Time.deltaTime;
-            background.color = new Color(0f, 0f, 0f, timer);
-            text.color = new Color(1f, 1f, 1f, timer);
+            Background.color = new Color(0f, 0f, 0f, timer);
+            Text.color = new Color(1f, 1f, 1f, timer);
             yield return null;
         }
-        obj = gameObject;
-        obj.SetActive(false);
+        Obj = gameObject;
+        Obj.SetActive(false);
     }
 }

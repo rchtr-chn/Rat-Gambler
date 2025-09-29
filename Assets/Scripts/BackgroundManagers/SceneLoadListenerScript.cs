@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadListenerScript : MonoBehaviour
 {
-    public GameManagerScript gameManager;
-    public AudioManagerScript audioManager;
+    public GameManagerScript GameManager;
+    public AudioManagerScript AudioManager;
 
-    SceneLoadListenerScript instance;
+    private SceneLoadListenerScript _instance;
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
     }
@@ -34,13 +34,13 @@ public class SceneLoadListenerScript : MonoBehaviour
     {
         if(scene.name == "GameplayScene")
         {
-            gameManager.InitializeGameplayManagers();
-            gameManager.CookieManagerScript.IntializeCookieWagerMechanic();
+            GameManager.InitializeGameplayManagers();
+            GameManager.CookieManagerScript.IntializeCookieWagerMechanic();
 
-            audioManager.StopMusic();
-            audioManager.musicSource.clip = audioManager.mainGameplayBGM;
-            audioManager.musicSource.loop = true;
-            audioManager.musicSource.Play();
+            AudioManager.StopMusic();
+            AudioManager.MusicSource.clip = AudioManager.MainGameplayBGM;
+            AudioManager.MusicSource.loop = true;
+            AudioManager.MusicSource.Play();
         }
     }
 }

@@ -1,93 +1,92 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManagerScript : MonoBehaviour
 {
-    public Sprite[] levelBackgrounds; //assign in inspector
-    public Image backgroundImage; //assign in inspector
+    public Sprite[] LevelBackgrounds; //assign in inspector
+    public Image BackgroundImage; //assign in inspector
 
-    public Text playerHealth;
-    public Text playerMaxHealth;
-    public Text enemyHealth;
-    public Text enemyMaxHealth;
-    public Text multiplierText;
+    public Text PlayerHealth;
+    public Text PlayerMaxHealth;
+    public Text EnemyHealth;
+    public Text EnemyMaxHealth;
+    public Text MultiplierText;
 
-    public Text playerPoint;
-    public Text enemyPoint;
+    public Text PlayerPoint;
+    public Text EnemyPoint;
 
-    public Text wagered;
-    public Text totalWinnings;
+    public Text Wagered;
+    public Text TotalWinnings;
 
-    public GameObject matchResultGroup;
-    public GameObject initialMatchResult;
+    public GameObject MatchResultGroup;
+    public GameObject InitialMatchResult;
 
-    public Coroutine winCoroutine;
+    public Coroutine WinCoroutine;
 
-    public Coroutine finalBossWinCoroutine;
-    public GameObject finalWinGroup;
-    public Image finalWinBackground;
-    public Text finalWinTextOne;
-    public Text finalWinTextTwo;
-    public GameObject finalWinTextThree;
-    public GameObject finalWinButton;
+    public Coroutine FinalBossWinCoroutine;
+    public GameObject FinalWinGroup;
+    public Image FinalWinBackground;
+    public Text FinalWinTextOne;
+    public Text FinalWinTextTwo;
+    public GameObject FinalWinTextThree;
+    public GameObject FinalWinButton;
 
-    public GameObject shopButton;
+    public GameObject ShopButton;
 
-    FieldManagerScript playerField;
-    FieldManagerScript enemyField;
+    private FieldManagerScript _playerField;
+    private FieldManagerScript _enemyField;
 
-    CookieManagerScript cookieManager;
+    private CookieManagerScript _cookieManager;
 
-    GameManagerScript gameManager;
+    private GameManagerScript _gameManager;
 
 
 
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        cookieManager = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>();
-        playerHealth = GameObject.Find("PlayerHealthText").GetComponent<Text>();
-        playerMaxHealth = GameObject.Find("PlayerMaxHealthText").GetComponent<Text>();
-        enemyHealth = GameObject.Find("EnemyHealthText").GetComponent<Text>();
-        enemyMaxHealth = GameObject.Find("EnemyMaxHealthText").GetComponent<Text>();
-        matchResultGroup = GameObject.Find("MatchResultGroup");
-        initialMatchResult = GameObject.Find("InitialMatchResultGroup");
-        multiplierText = GameObject.Find("Multiplier-Text").GetComponent<Text>();
-        wagered = GameObject.Find("Bets-Text-Nominal").GetComponent<Text>();
-        totalWinnings = GameObject.Find("TotalWinnings-Text-Nominal").GetComponent<Text>();
-        shopButton = GameObject.Find("SHOP-Button");
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        _cookieManager = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>();
+        PlayerHealth = GameObject.Find("PlayerHealthText").GetComponent<Text>();
+        PlayerMaxHealth = GameObject.Find("PlayerMaxHealthText").GetComponent<Text>();
+        EnemyHealth = GameObject.Find("EnemyHealthText").GetComponent<Text>();
+        EnemyMaxHealth = GameObject.Find("EnemyMaxHealthText").GetComponent<Text>();
+        MatchResultGroup = GameObject.Find("MatchResultGroup");
+        InitialMatchResult = GameObject.Find("InitialMatchResultGroup");
+        MultiplierText = GameObject.Find("Multiplier-Text").GetComponent<Text>();
+        Wagered = GameObject.Find("Bets-Text-Nominal").GetComponent<Text>();
+        TotalWinnings = GameObject.Find("TotalWinnings-Text-Nominal").GetComponent<Text>();
+        ShopButton = GameObject.Find("SHOP-Button");
 
         //sets up shop button to claim rewards and go to shop scene
-        shopButton.GetComponent<Button>().onClick.AddListener(() => cookieManager.ClaimRewards(GameManagerScript.instance.rewardMultiplier));
-        shopButton.GetComponent<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("ShopScene"));
+        ShopButton.GetComponent<Button>().onClick.AddListener(() => _cookieManager.ClaimRewards(GameManagerScript.Instance.RewardMultiplier));
+        ShopButton.GetComponent<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("ShopScene"));
 
-        shopButton.SetActive(false);
-        matchResultGroup.SetActive(false);
-        initialMatchResult.SetActive(false);
+        ShopButton.SetActive(false);
+        MatchResultGroup.SetActive(false);
+        InitialMatchResult.SetActive(false);
 
         //winCoroutine = StartCoroutine(DisplayWinScreen());
     }
 
     void Update()
     {
-        playerHealth.text = GameManagerScript.instance.PlayerHealth.ToString();
-        playerMaxHealth.text = GameManagerScript.instance.PlayerMaxHealth.ToString();
-        enemyHealth.text = GameManagerScript.instance.EnemyHealth.ToString();
-        enemyMaxHealth.text = GameManagerScript.instance.EnemyMaxHealth.ToString();
+        PlayerHealth.text = GameManagerScript.Instance.PlayerHealth.ToString();
+        PlayerMaxHealth.text = GameManagerScript.Instance.PlayerMaxHealth.ToString();
+        EnemyHealth.text = GameManagerScript.Instance.EnemyHealth.ToString();
+        EnemyMaxHealth.text = GameManagerScript.Instance.EnemyMaxHealth.ToString();
 
-        if (gameManager.selectedDifficulty <= 2)
+        if (_gameManager.SelectedDifficulty <= 2)
         {
-            backgroundImage.sprite = levelBackgrounds[0];
+            BackgroundImage.sprite = LevelBackgrounds[0];
         }
-        else if (gameManager.selectedDifficulty > 2 && gameManager.selectedDifficulty <= 4)
+        else if (_gameManager.SelectedDifficulty > 2 && _gameManager.SelectedDifficulty <= 4)
         {
-            backgroundImage.sprite = levelBackgrounds[1];
+            BackgroundImage.sprite = LevelBackgrounds[1];
         }
-        else if (gameManager.selectedDifficulty == 5)
+        else if (_gameManager.SelectedDifficulty == 5)
         {
-            backgroundImage.sprite = levelBackgrounds[2];
+            BackgroundImage.sprite = LevelBackgrounds[2];
         }
 
         UpdateEnemyPoints();
@@ -96,60 +95,60 @@ public class UIManagerScript : MonoBehaviour
 
     void UpdateEnemyPoints()
     {
-        enemyField = GameObject.Find("EnemyFieldManager").GetComponent<FieldManagerScript>();
-        int points = enemyField.totalCardValue + GameManagerScript.instance.additionalEnemyPoints;
-        enemyPoint.text = points.ToString();
+        _enemyField = GameObject.Find("EnemyFieldManager").GetComponent<FieldManagerScript>();
+        int points = _enemyField.TotalCardValue + GameManagerScript.Instance.AdditionalEnemyPoints;
+        EnemyPoint.text = points.ToString();
     }
 
     void UpdatePlayerPoints()
     {
-        playerField = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
-        int points = playerField.totalCardValue + GameManagerScript.instance.additionalPlayerPoints;
-        playerPoint.text = points.ToString();
+        _playerField = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
+        int points = _playerField.TotalCardValue + GameManagerScript.Instance.AdditionalPlayerPoints;
+        PlayerPoint.text = points.ToString();
     }
 
     public IEnumerator DisplayWinScreen()
     {
-        int rewardMultiplier = GameManagerScript.instance.rewardMultiplier + 1;
-        multiplierText.text = "x " + rewardMultiplier.ToString() + "00%";
+        int rewardMultiplier = GameManagerScript.Instance.RewardMultiplier + 1;
+        MultiplierText.text = "x " + rewardMultiplier.ToString() + "00%";
 
-        int wageredAmount = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>().wageredCookies;
+        int wageredAmount = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>().WageredCookies;
         int totalReward = wageredAmount * rewardMultiplier;
 
-        wagered.text = wageredAmount.ToString();
-        totalWinnings.text = totalReward.ToString();
+        Wagered.text = wageredAmount.ToString();
+        TotalWinnings.text = totalReward.ToString();
 
-        initialMatchResult.SetActive(true);
+        InitialMatchResult.SetActive(true);
         yield return new WaitForSeconds(3f);
-        matchResultGroup.SetActive(true);
+        MatchResultGroup.SetActive(true);
 
         float timer = 0f;
         while(timer < 1f)
         {
             timer += Time.deltaTime;
-            matchResultGroup.transform.localPosition = Vector3.Lerp(matchResultGroup.transform.localPosition, new Vector3(0, 0, 0), timer);
+            MatchResultGroup.transform.localPosition = Vector3.Lerp(MatchResultGroup.transform.localPosition, new Vector3(0, 0, 0), timer);
             yield return null;
         }
         //initialMatchResult.SetActive(false);
-        shopButton.SetActive(true);
+        ShopButton.SetActive(true);
 
-        winCoroutine = null;
+        WinCoroutine = null;
     }
 
     public IEnumerator FinalBossWinTransition()
     {
-        finalWinGroup.SetActive(true);
+        FinalWinGroup.SetActive(true);
         float timer = 0f;
         while (timer < 1f)
         {
             timer += Time.deltaTime;
-            finalWinBackground.color = new Color(0f, 0f, 0f, timer);
-            finalWinTextOne.color = new Color(1f, 1f, 1f, timer);
-            finalWinTextTwo.color = new Color(1f, 1f, 1f, timer);
+            FinalWinBackground.color = new Color(0f, 0f, 0f, timer);
+            FinalWinTextOne.color = new Color(1f, 1f, 1f, timer);
+            FinalWinTextTwo.color = new Color(1f, 1f, 1f, timer);
             yield return null;
         }
-        finalWinTextThree.SetActive(true);
-        finalWinButton.SetActive(true);
-        finalBossWinCoroutine = null;
+        FinalWinTextThree.SetActive(true);
+        FinalWinButton.SetActive(true);
+        FinalBossWinCoroutine = null;
     }
 }

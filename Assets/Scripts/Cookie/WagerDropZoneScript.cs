@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class WagerDropZoneScript : MonoBehaviour, IDropHandler
 {
+    private CookieManagerScript _cookieManager;
+
+    private void Start()
+    {
+        _cookieManager = FindObjectOfType<CookieManagerScript>();
+    }
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedObject = eventData.pointerDrag; // Get the object being dragged
@@ -27,7 +31,7 @@ public class WagerDropZoneScript : MonoBehaviour, IDropHandler
                 droppedObject.GetComponent<CanvasGroup>().blocksRaycasts = false; // Prevent further raycast blocking
                 droppedObject.GetComponent<CanvasGroup>().alpha = 1.0f; // Ensure the object is fully opaque
 
-                FindObjectOfType<CookieManagerScript>().AddWageredCookies(droppedObject); // Increment the wagered cookies count
+                _cookieManager.AddWageredCookies(droppedObject); // Increment the wagered cookies count
             }
         }
     }

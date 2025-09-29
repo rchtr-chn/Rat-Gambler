@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 
 public class TrashbinScript : MonoBehaviour, IDropHandler
 {
-    AudioManagerScript audioManager;
-    HandManagerScript handManager;
+    private AudioManagerScript _audioManager;
+    private HandManagerScript _handManager;
 
     private void Start()
     {
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerScript>();
-        handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
+        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerScript>();
+        _handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -24,27 +24,27 @@ public class TrashbinScript : MonoBehaviour, IDropHandler
         Debug.Log("Dropped object: " + droppedObject);
         if (droppedObject != null && droppedObject.transform.parent.gameObject.name == "PlayerHand") // Check if the dropped object has the "Card" tag
         {
-            audioManager.PlaySfx(audioManager.trashCard);
+            _audioManager.PlaySfx(_audioManager.TrashCard);
             Debug.Log("TrashbinScript: Dropped object is from PlayerHand");
-            handManager.onHandCards.Remove(droppedObject); // Remove the card from the player's hand
+            _handManager.OnHandCards.Remove(droppedObject); // Remove the card from the player's hand
             Destroy(droppedObject); // Destroy the dropped object
 
-            handManager.UpdateHandPositions(); // Update the positions of the remaining cards in hand
+            _handManager.UpdateHandPositions(); // Update the positions of the remaining cards in hand
         }
     }
 
     bool CheckForMinimalDeckRule(GameObject target)
     {
         int index = 0;
-        for (int i = 0; i < handManager.onHandCards.Count - 1; i++)
+        for (int i = 0; i < _handManager.OnHandCards.Count - 1; i++)
         {
-            if (handManager.onHandCards[i].GetComponent<CardDisplay>().cardData.cardType.Contains(Card.CardType.Poker))
+            if (_handManager.OnHandCards[i].GetComponent<CardDisplay>().CardData.CardType.Contains(Card.CardTypes.Poker))
             {
                 index++;
             }
         }
 
-        if(index > 4 || target.GetComponent<CardDisplay>().cardData.cardType.Contains(Card.CardType.Power))
+        if(index > 4 || target.GetComponent<CardDisplay>().CardData.CardType.Contains(Card.CardTypes.Power))
         {
             return true;
         }

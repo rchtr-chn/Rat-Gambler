@@ -4,25 +4,25 @@ using UnityEngine.UI;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    public DeckManagerScript deckManagerScript;
-    public HandManagerScript handManagerScript;
-    public Text[] placeHolderCardText;
-    List<Card> shopCards = new List<Card>();
-    public GameObject shopCardPrefab;
+    public DeckManagerScript DeckManagerScript;
+    public HandManagerScript HandManagerScript;
+    public Text[] PlaceHolderCardText;
+    private List<Card> _shopCards = new List<Card>();
+    public GameObject ShopCardPrefab;
 
-    public AudioManagerScript audioManager;
+    public AudioManagerScript AudioManager;
 
-    public List<GameObject> cardPlaceHolders = new List<GameObject>();
+    public List<GameObject> CardPlaceHolders = new List<GameObject>();
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManagerScript>();
-        audioManager.musicSource.clip = audioManager.levelSelectBGM;
-        audioManager.musicSource.loop = true;
-        audioManager.musicSource.Play();
+        AudioManager = FindObjectOfType<AudioManagerScript>();
+        AudioManager.MusicSource.clip = AudioManager.LevelSelectBGM;
+        AudioManager.MusicSource.loop = true;
+        AudioManager.MusicSource.Play();
 
-        deckManagerScript = GameObject.FindGameObjectWithTag("PlayerDeckManager").GetComponent<DeckManagerScript>();
-        handManagerScript = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
+        DeckManagerScript = GameObject.FindGameObjectWithTag("PlayerDeckManager").GetComponent<DeckManagerScript>();
+        HandManagerScript = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
 
         //set game manager to player turn so cards can be dragged
         GameManagerScript gameManager = FindObjectOfType<GameManagerScript>();
@@ -35,12 +35,12 @@ public class ShopManagerScript : MonoBehaviour
 
     void ShowPlayerDeck()
     {
-        for(int i = 0; i < handManagerScript.onHandCards.Count - 1; i++)
+        for(int i = 0; i < HandManagerScript.OnHandCards.Count - 1; i++)
         {
-            handManagerScript.onHandCards[i].GetComponent<CardMovementScript>().cardPlay = new Vector2(0, 1200);
+            HandManagerScript.OnHandCards[i].GetComponent<CardMovementScript>().CardPlay = new Vector2(0, 1200);
         }
 
-        deckManagerScript.DrawEntireDeck();
+        DeckManagerScript.DrawEntireDeck();
     }
 
     void GetRandomCards()
@@ -49,7 +49,7 @@ public class ShopManagerScript : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             int randomIndex = Random.Range(0, cards.Length - 1);
-            shopCards.Add(cards[randomIndex]);
+            _shopCards.Add(cards[randomIndex]);
         }
 
         PlaceCardsOnPlaceHolders();
@@ -57,13 +57,13 @@ public class ShopManagerScript : MonoBehaviour
 
     void PlaceCardsOnPlaceHolders()
     {
-        for (int i = 0; i < cardPlaceHolders.Count; i++)
+        for (int i = 0; i < CardPlaceHolders.Count; i++)
         {
-            if (i < shopCards.Count)
+            if (i < _shopCards.Count)
             {
-                GameObject obj = Instantiate(shopCardPrefab, cardPlaceHolders[i].transform.position, Quaternion.identity, cardPlaceHolders[i].transform);
-                obj.GetComponent<CardDisplay>().cardData = shopCards[i];
-                placeHolderCardText[i].text = shopCards[i].cardName.ToString();
+                GameObject obj = Instantiate(ShopCardPrefab, CardPlaceHolders[i].transform.position, Quaternion.identity, CardPlaceHolders[i].transform);
+                obj.GetComponent<CardDisplay>().CardData = _shopCards[i];
+                PlaceHolderCardText[i].text = _shopCards[i].CardName.ToString();
             }
         }
     }

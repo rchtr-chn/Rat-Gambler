@@ -1,28 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FieldManagerScript : MonoBehaviour
 {
-    public GameObject cardPrefab; //assign in inspector
-    public Transform handTransform; //root of hand pos
-    [SerializeField] float fanSpread = 0f; //how much to spread cards in hand
-    [SerializeField] float horizontalSpacing = 200f; //spacing between cards
-    [SerializeField] float verticalSpacing = 30f; //spacing between rows if needed
-    public int totalCardValue = 0; //total value of cards in hand
+    public GameObject CardPrefab; //assign in inspector
+    public Transform HandTransform; //root of hand pos
+    [SerializeField] private float _fanSpread = 0f; //how much to spread cards in hand
+    [SerializeField] private float _horizontalSpacing = 200f; //spacing between cards
+    [SerializeField] private float _verticalSpacing = 30f; //spacing between rows if needed
+    public int TotalCardValue = 0; //total value of cards in hand
 
-    public List<GameObject> fieldCards = new List<GameObject>(); //list of cards in deck
+    public List<GameObject> FieldCards = new List<GameObject>(); //list of cards in deck
 
     public void AddCardToField (Card cardData)
     {
         //instantiate card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
+        GameObject newCard = Instantiate(CardPrefab, HandTransform.position, Quaternion.identity, HandTransform);
         newCard.GetComponent<CardMovementScript>().enabled = false; //disable movement script
-        fieldCards.Add(newCard);
+        FieldCards.Add(newCard);
 
         //set card data
-        newCard.GetComponent<CardDisplay>().cardData = cardData;
+        newCard.GetComponent<CardDisplay>().CardData = cardData;
         UpdateTotalCardValue(cardData);
 
         UpdateHandPositions();
@@ -30,13 +28,13 @@ public class FieldManagerScript : MonoBehaviour
     public void AddCopiedCardToField(Card cardData)
     {
         //instantiate card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
+        GameObject newCard = Instantiate(CardPrefab, HandTransform.position, Quaternion.identity, HandTransform);
         newCard.GetComponent<CardMovementScript>().enabled = false; //disable movement script
-        fieldCards.Add(newCard);
+        FieldCards.Add(newCard);
 
         //set card data
-        newCard.GetComponent<CardDisplay>().cardData = cardData;
-        newCard.GetComponent<CardDisplay>().isCopied = true;
+        newCard.GetComponent<CardDisplay>().CardData = cardData;
+        newCard.GetComponent<CardDisplay>().IsCopied = true;
         UpdateTotalCardValue(cardData);
 
         UpdateHandPositions();
@@ -44,33 +42,33 @@ public class FieldManagerScript : MonoBehaviour
 
     void UpdateHandPositions()
     {
-        int cardCount = fieldCards.Count;
+        int cardCount = FieldCards.Count;
 
         if (cardCount == 1)
         {
-            fieldCards[0].transform.localRotation = Quaternion.Euler(0, 0, 0);
-            fieldCards[0].transform.localPosition = new Vector3(0, 0, 0);
+            FieldCards[0].transform.localRotation = Quaternion.Euler(0, 0, 0);
+            FieldCards[0].transform.localPosition = new Vector3(0, 0, 0);
             return;
         }
 
         for (int i = 0; i < cardCount; i++)
         {
-            float rotAngle = (fanSpread * (i - (cardCount - 1) / 2f));
-            fieldCards[i].transform.localRotation = Quaternion.Euler(0, 0, rotAngle);
+            float rotAngle = (_fanSpread * (i - (cardCount - 1) / 2f));
+            FieldCards[i].transform.localRotation = Quaternion.Euler(0, 0, rotAngle);
 
-            float xOffset = (horizontalSpacing * (i - (cardCount - 1) / 2f));
+            float xOffset = (_horizontalSpacing * (i - (cardCount - 1) / 2f));
 
             float normalizedPos = (2f * i / (cardCount - 1) - 1f); // Normalize position between -1 and 1
-            float yOffset = verticalSpacing * (1 - normalizedPos * normalizedPos); // Adjust vertical position based on normalized position
+            float yOffset = _verticalSpacing * (1 - normalizedPos * normalizedPos); // Adjust vertical position based on normalized position
 
             //set card pos
-            fieldCards[i].transform.localPosition = new Vector3(xOffset, yOffset, 0);
+            FieldCards[i].transform.localPosition = new Vector3(xOffset, yOffset, 0);
         }
     }
 
     void UpdateTotalCardValue(Card cardData)
     {
-        totalCardValue = CalculateHandValue(fieldCards);
+        TotalCardValue = CalculateHandValue(FieldCards);
     }
     int CalculateHandValue(List<GameObject> hand)
     {
@@ -81,14 +79,14 @@ public class FieldManagerScript : MonoBehaviour
         {
             if(card != null)
             {
-                if (card.GetComponent<CardDisplay>().cardData.cardType.Contains(Card.CardType.Aces))
+                if (card.GetComponent<CardDisplay>().CardData.CardType.Contains(Card.CardTypes.Aces))
                 {
                     aceCount++;
                     total += 1; // Count Ace as 1 first
                 }
                 else
                 {
-                    total += card.GetComponent<CardDisplay>().cardData.cardPoints;
+                    total += card.GetComponent<CardDisplay>().CardData.CardPoints;
                 }
             }
         }
@@ -116,20 +114,20 @@ public class FieldManagerScript : MonoBehaviour
             deckManager = GameObject.FindGameObjectWithTag("EnemyDeckManager").GetComponent<DeckManagerScript>();
         }
 
-        for (int i = fieldCards.Count - 1; i >= 0; i--)
+        for (int i = FieldCards.Count - 1; i >= 0; i--)
         {
-            GameObject obj = fieldCards[i];
-            if (obj.GetComponent<CardDisplay>().isCopied)
+            GameObject obj = FieldCards[i];
+            if (obj.GetComponent<CardDisplay>().IsCopied)
             {
-                fieldCards.RemoveAt(i);
+                FieldCards.RemoveAt(i);
                 Destroy(obj);
             }
             else
             {
-                Card cardData = obj.GetComponent<CardDisplay>().cardData;
-                deckManager.playingDeck.Add(cardData);
-                fieldCards.RemoveAt(i);
-                deckManager.currentHandSize--;
+                Card cardData = obj.GetComponent<CardDisplay>().CardData;
+                deckManager.PlayingDeck.Add(cardData);
+                FieldCards.RemoveAt(i);
+                deckManager.CurrentHandSize--;
                 Destroy(obj);
             }
         }

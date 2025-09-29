@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OptionsManagerScript : MonoBehaviour
 {
-    private AudioManagerScript audioManagerScript;
+    private AudioManagerScript _audioManagerScript;
 
     public bool muteAudio = false;
 
     private void Start()
     {
-        audioManagerScript = GameManagerScript.instance.AudioManagerScript;
+        _audioManagerScript = GameManagerScript.Instance.AudioManagerScript;
     }
 }

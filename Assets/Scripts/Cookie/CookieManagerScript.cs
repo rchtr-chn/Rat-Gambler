@@ -1,126 +1,125 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CookieManagerScript : MonoBehaviour
 {
-    public GameObject buttonText;
-    GameManagerScript gameManager;
-    AudioManagerScript audioManager;
-    public int playerCookies = 10;
-    public int wageredCookies = 0;
-    public int wagerMinimum = 10;
-    public GameObject cookieGroup;
-    public GameObject cookieParent;
-    public GameObject cookiePrefab;
-    public GameObject confirmWagerButton;
-    public List<GameObject> cookies = new List<GameObject>();
-    public bool betPlaced = false;
+    public GameObject ButtonText;
+    private GameManagerScript _gameManager;
+    private AudioManagerScript _audioManager;
+    public int PlayerCookies = 10;
+    public int WageredCookies = 0;
+    public int WagerMinimum = 10;
+    public GameObject CookieGroup;
+    public GameObject CookieParent;
+    public GameObject CookiePrefab;
+    public GameObject ConfirmWagerButton;
+    public List<GameObject> Cookies = new List<GameObject>();
+    public bool BetPlaced = false;
 
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManagerScript>();
-        audioManager = FindObjectOfType<AudioManagerScript>();
+        _gameManager = FindObjectOfType<GameManagerScript>();
+        _audioManager = FindObjectOfType<AudioManagerScript>();
     }
     private void Update()
     {
-        switch(gameManager.selectedDifficulty)
+        switch(_gameManager.SelectedDifficulty)
         {
             case 1:
-                wagerMinimum = 10;
+                WagerMinimum = 10;
                 break;
             case 2:
-                wagerMinimum = 10;
+                WagerMinimum = 10;
                 break;
             case 3:
-                wagerMinimum = 50;
+                WagerMinimum = 50;
                 break;
             case 4:
-                wagerMinimum = 100;
+                WagerMinimum = 100;
                 break;
             case 5:
-                wagerMinimum = 300;
+                WagerMinimum = 300;
                 break;
         }
     }
 
     public void IntializeCookieWagerMechanic()
     {
-        cookieGroup = GameObject.Find("Cookie-Group");
-        cookieParent = GameObject.Find("CookieParent");
-        confirmWagerButton = GameObject.Find("ConfirmWagerButton");
-        buttonText = GameObject.Find("ConfirmWagerButtonText");
+        CookieGroup = GameObject.Find("Cookie-Group");
+        CookieParent = GameObject.Find("CookieParent");
+        ConfirmWagerButton = GameObject.Find("ConfirmWagerButton");
+        ButtonText = GameObject.Find("ConfirmWagerButtonText");
 
-        buttonText.GetComponent<UnityEngine.UI.Text>().text = "All-In";
-        confirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(AllIn);
-        confirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => audioManager.PlaySfx(audioManager.buttonPress));
-        confirmWagerButton.SetActive(true);
+        ButtonText.GetComponent<UnityEngine.UI.Text>().text = "All-In";
+        ConfirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(AllIn);
+        ConfirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => _audioManager.PlaySfx(_audioManager.ButtonPress));
+        ConfirmWagerButton.SetActive(true);
 
         PlaceBets();
     }
 
     public void AllIn()
     {
-        wageredCookies = playerCookies;
-        playerCookies = 0;
+        WageredCookies = PlayerCookies;
+        PlayerCookies = 0;
         ConfirmWager();
-        confirmWagerButton.SetActive(false);
+        ConfirmWagerButton.SetActive(false);
     }
 
     public void AddWageredCookies(GameObject obj)
     {
-        wageredCookies += 10;
-        playerCookies -= 10;
-        cookies.Remove(obj);
+        WageredCookies += 10;
+        PlayerCookies -= 10;
+        Cookies.Remove(obj);
 
-        buttonText.GetComponent<UnityEngine.UI.Text>().text = "Confirm Wager";
-        confirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.RemoveListener(AllIn);
-        confirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ConfirmWager);
+        ButtonText.GetComponent<UnityEngine.UI.Text>().text = "Confirm Wager";
+        ConfirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.RemoveListener(AllIn);
+        ConfirmWagerButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ConfirmWager);
 
-        if(wageredCookies >= wagerMinimum)
+        if(WageredCookies >= WagerMinimum)
         {
-            confirmWagerButton.SetActive(true);
+            ConfirmWagerButton.SetActive(true);
         }
         else
         {
-            confirmWagerButton.SetActive(false);
+            ConfirmWagerButton.SetActive(false);
         }
     }
 
     public void ConfirmWager()
     {
-        cookieGroup.SetActive(false);
-        confirmWagerButton.SetActive(false);
+        CookieGroup.SetActive(false);
+        ConfirmWagerButton.SetActive(false);
         int index = 0;
-        while (index < cookies.Count)
+        while (index < Cookies.Count)
         {
-            Destroy(cookies[index]);
+            Destroy(Cookies[index]);
             index++;
         }
-        cookies.Clear();
-        betPlaced = true;
+        Cookies.Clear();
+        BetPlaced = true;
 
-        gameManager.StartGame();
+        _gameManager.StartGame();
     }
 
     public void ClaimRewards(int mult)
     {
-        int reward = (mult * wageredCookies) + wageredCookies;
-        playerCookies += reward;
-        wageredCookies = 0;
-        betPlaced = false;
+        int reward = (mult * WageredCookies) + WageredCookies;
+        PlayerCookies += reward;
+        WageredCookies = 0;
+        BetPlaced = false;
     }
 
     public void PlaceBets()
     {
         int index = 10;
-        while (index <= playerCookies)
+        while (index <= PlayerCookies)
         {
             float xRand = Random.Range(-100f, 100f);
             float yRand = Random.Range(-100f, 100f);
-            GameObject obj = Instantiate(cookiePrefab, cookieParent.transform.position + new Vector3(xRand, yRand, 0), Quaternion.identity, cookieParent.transform);
-            cookies.Add(obj);
+            GameObject obj = Instantiate(CookiePrefab, CookieParent.transform.position + new Vector3(xRand, yRand, 0), Quaternion.identity, CookieParent.transform);
+            Cookies.Add(obj);
             index += 10;
         }
     }

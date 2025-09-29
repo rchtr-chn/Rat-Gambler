@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class CardFlipScript : MonoBehaviour
 {
-    [SerializeField] GameObject frontView;
-    [SerializeField] GameObject backView;
-    [SerializeField] float duration = 0.6f;
-    public bool showFront = true;
-    Coroutine flipCoroutine;
+    [SerializeField] private GameObject _frontView;
+    [SerializeField] private GameObject _backView;
+    [SerializeField] private float _duration = 0.6f;
+    public bool ShowFront = true;
+    private Coroutine _flipCoroutine;
 
     private void Start()
     {
-        if (showFront)
+        if (ShowFront)
         {
-            frontView.SetActive(true);
-            backView.SetActive(false);
+            _frontView.SetActive(true);
+            _backView.SetActive(false);
         }
         else
         {
-            frontView.SetActive(false);
-            backView.SetActive(true);
+            _frontView.SetActive(false);
+            _backView.SetActive(true);
         }
     }
 
@@ -32,38 +32,38 @@ public class CardFlipScript : MonoBehaviour
         float startAngle = isFront ? 0f : 180f;
         float endAngle = isFront ? 180f : 0f;
 
-        while (timer < duration)
+        while (timer < _duration)
         {
             timer += Time.deltaTime;
-            float angle = Mathf.Lerp(startAngle, endAngle, timer / duration);
+            float angle = Mathf.Lerp(startAngle, endAngle, timer / _duration);
             transform.localRotation = Quaternion.Euler(0f, angle, 0f);
 
             if ((angle >= 90f && isFront) || (angle <= 90f && !isFront))
             {
-                frontView.SetActive(!isFront);
-                backView.SetActive(isFront);
+                _frontView.SetActive(!isFront);
+                _backView.SetActive(isFront);
             }
 
             yield return null;
         }
 
-        showFront = !showFront;
-        flipCoroutine = null;
+        ShowFront = !ShowFront;
+        _flipCoroutine = null;
     }
 
     public void FlipCard()
     {
-        if (flipCoroutine != null)
+        if (_flipCoroutine != null)
         {
             return;
         }
-        flipCoroutine = StartCoroutine(FlipCardAnimation(showFront));
+        _flipCoroutine = StartCoroutine(FlipCardAnimation(ShowFront));
     }
 
     public void FlipCardInstant()
     {
-        backView.SetActive(!showFront);
-        frontView.SetActive(showFront);
-        showFront = !showFront;
+        _backView.SetActive(!ShowFront);
+        _frontView.SetActive(ShowFront);
+        ShowFront = !ShowFront;
     }
 }

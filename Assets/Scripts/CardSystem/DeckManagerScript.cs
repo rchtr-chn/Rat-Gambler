@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class DeckManagerScript : MonoBehaviour
 {
-    public List<Card> resourceDeck = new List<Card>(); //list of all cards in deck
-    public List<Card> playingDeck = new List<Card>(); //list of all cards in deck
+    public List<Card> ResourceDeck = new List<Card>(); //list of all cards in deck
+    public List<Card> PlayingDeck = new List<Card>(); //list of all cards in deck
 
     //private int currentCardIndex = 0; //index of current card in deck
 
-    [SerializeField] int startingHandSize = 3; //number of cards to draw at start
-    [SerializeField] int maxHandSize; //max number of cards in deck
-    public int currentHandSize; //min number of cards in deck\
+    [SerializeField] private int _startingHandSize = 3; //number of cards to draw at start
+    [SerializeField] private int _maxHandSize; //max number of cards in deck
+    public int CurrentHandSize; //min number of cards in deck\
 
-    public Coroutine handInitializationCoroutine;
-    public Coroutine drawCoroutine;
+    public Coroutine HandInitializationCoroutine;
+    public Coroutine DrawCoroutine;
 
-    public AudioManagerScript audioManager;
+    public AudioManagerScript AudioManager;
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManagerScript>();
+        AudioManager = FindObjectOfType<AudioManagerScript>();
         Card[] cards;
         if (gameObject.CompareTag("EnemyDeckManager"))
         {
@@ -31,11 +31,11 @@ public class DeckManagerScript : MonoBehaviour
             cards = Resources.LoadAll<Card>("CardData/RatmiCards");
         }
 
-        resourceDeck.AddRange(cards); //add all cards to deck
+        ResourceDeck.AddRange(cards); //add all cards to deck
         for(int i=0; i<8; i++)
         {
-            int randomIndex = Random.Range(0, resourceDeck.Count);
-            playingDeck.Add(resourceDeck[randomIndex]);
+            int randomIndex = Random.Range(0, ResourceDeck.Count);
+            PlayingDeck.Add(ResourceDeck[randomIndex]);
         }
     }
 
@@ -55,71 +55,71 @@ public class DeckManagerScript : MonoBehaviour
             field = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
         }
 
-        drawCoroutine = StartCoroutine(DrawUntilPoker(field));
+        DrawCoroutine = StartCoroutine(DrawUntilPoker(field));
 
-        while (currentHandSize <= startingHandSize)
+        while (CurrentHandSize <= _startingHandSize)
         {
             DrawCardToHand(hand);
             yield return null;
         }
         //DrawCardToField(field); //draw initial card to field
-        handInitializationCoroutine = null;
+        HandInitializationCoroutine = null;
 
-        Debug.Log(hand.onHandCards.Count);
-        Debug.Log(field.fieldCards.Count);
+        Debug.Log(hand.OnHandCards.Count);
+        Debug.Log(field.FieldCards.Count);
     }
 
     public void DrawCardToHand(HandManagerScript handManagerScript)
     {
-        audioManager.PlaySfx(audioManager.drawCard);
+        AudioManager.PlaySfx(AudioManager.DrawCard);
 
-        int randomIndex = Random.Range(0, playingDeck.Count - 1);
-        if (playingDeck.Count == 0 || currentHandSize == maxHandSize)
+        int randomIndex = Random.Range(0, PlayingDeck.Count - 1);
+        if (PlayingDeck.Count == 0 || CurrentHandSize == _maxHandSize)
             return;
 
-        Card nextCard = playingDeck[randomIndex];
+        Card nextCard = PlayingDeck[randomIndex];
         handManagerScript.AddCardToHand(nextCard);
-        currentHandSize++;
-        playingDeck.RemoveAt(randomIndex); //remove drawn card from deck
+        CurrentHandSize++;
+        PlayingDeck.RemoveAt(randomIndex); //remove drawn card from deck
     }
     IEnumerator DrawUntilPoker(FieldManagerScript fieldManagerScript)
     {
-        if (playingDeck.Count > 0)
+        if (PlayingDeck.Count > 0)
         {
-            Card potentialCard = playingDeck[0];
-            while (!potentialCard.cardType.Contains(Card.CardType.Poker))
+            Card potentialCard = PlayingDeck[0];
+            while (!potentialCard.CardType.Contains(Card.CardTypes.Poker))
             {
-                potentialCard = playingDeck[Random.Range(0, playingDeck.Count - 1)];
+                potentialCard = PlayingDeck[Random.Range(0, PlayingDeck.Count - 1)];
                 yield return null;
             }
-            audioManager.PlaySfx(audioManager.drawCard);
+            AudioManager.PlaySfx(AudioManager.DrawCard);
             fieldManagerScript.AddCardToField(potentialCard);
-            currentHandSize++;
-            playingDeck.Remove(potentialCard); //remove drawn card from deck
+            CurrentHandSize++;
+            PlayingDeck.Remove(potentialCard); //remove drawn card from deck
         }
 
-        drawCoroutine = null;
+        DrawCoroutine = null;
         yield return null;
 
     }
 
     public void DrawCardToField(FieldManagerScript fieldManagerScript)
     {
-        int randomIndex = Random.Range(0, playingDeck.Count - 1);
-        if (playingDeck.Count == 0 || currentHandSize == maxHandSize)
+        int randomIndex = Random.Range(0, PlayingDeck.Count - 1);
+        if (PlayingDeck.Count == 0 || CurrentHandSize == _maxHandSize)
             return;
 
-        Card nextCard = playingDeck[randomIndex];
+        Card nextCard = PlayingDeck[randomIndex];
         fieldManagerScript.AddCardToField(nextCard);
-        currentHandSize++;
-        playingDeck.RemoveAt(randomIndex); //remove drawn card from deck
+        CurrentHandSize++;
+        PlayingDeck.RemoveAt(randomIndex); //remove drawn card from deck
     }
 
     public void DrawEntireDeck()
     {
         HandManagerScript hand = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
 
-        int index = playingDeck.Count;
+        int index = PlayingDeck.Count;
         while (index > 0)
         {
             DrawCardToHand(hand);

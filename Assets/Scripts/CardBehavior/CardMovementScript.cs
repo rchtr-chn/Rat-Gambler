@@ -4,52 +4,52 @@ using UnityEngine.SceneManagement;
 
 public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler
 {
-    private RectTransform rectTransform;
-    private Canvas canvas;
-    private CanvasGroup canvasGroup;
+    private RectTransform _rectTransform;
+    private Canvas _canvas;
+    private CanvasGroup _canvasGroup;
     
-    public AudioManagerScript audioManager;
+    public AudioManagerScript AudioManager;
 
-    private Vector2 originalLocalPointerPos;
-    private Vector3 originalPanelLocalPos;
-    private Vector3 originalScale;
+    private Vector2 _originalLocalPointerPos;
+    private Vector3 _originalPanelLocalPos;
+    private Vector3 _originalScale;
 
-    private int currentState = 0;
+    private int _currentState = 0;
 
-    private Quaternion originalRotation;
-    private Vector3 originalPosition;
+    private Quaternion _originalRotation;
+    private Vector3 _originalPosition;
 
-    [SerializeField] private float selectScale = 1.2f;
-    public Vector2 cardPlay;
-    [SerializeField] private Vector3 playPos;
-    [SerializeField] private GameObject highlightEffect;
-    [SerializeField] private GameObject playArrow;
-    [SerializeField] private float lerpFactor = 0.1f;
+    [SerializeField] private float _selectScale = 1.2f;
+    public Vector2 CardPlay;
+    [SerializeField] private Vector3 _playPos;
+    [SerializeField] private GameObject _highlightEffect;
+    [SerializeField] private GameObject _playArrow;
+    [SerializeField] private float _lerpFactor = 0.1f;
 
-    FieldManagerScript fieldManager;
-    HandManagerScript handManager;
-    GameManagerScript gameManager;
+    private FieldManagerScript _fieldManager;
+    private HandManagerScript _handManager;
+    private GameManagerScript _gameManager;
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManagerScript>();
+        AudioManager = FindObjectOfType<AudioManagerScript>();
 
-        canvasGroup = GetComponent<CanvasGroup>();
-        rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
-        originalScale = rectTransform.localScale;
-        originalRotation = rectTransform.localRotation;
-        originalPosition = rectTransform.localPosition;
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _rectTransform = GetComponent<RectTransform>();
+        _canvas = GetComponentInParent<Canvas>();
+        _originalScale = _rectTransform.localScale;
+        _originalRotation = _rectTransform.localRotation;
+        _originalPosition = _rectTransform.localPosition;
 
 
-        fieldManager = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
-        handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        _fieldManager = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
+        _handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
     }
 
     private void Update()
     {
-        switch (currentState)
+        switch (_currentState)
         {
             case 1:
                 HandleHoverState();
@@ -64,7 +64,7 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
                 break;
 
             case 3:
-                if (gameManager.isPlayerTurn)
+                if (_gameManager.IsPlayerTurn)
                 {
                     HandlePlayState();
                 }
@@ -78,31 +78,31 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
 
     private void TransitionToState0()
     {
-        currentState = 0;
-        rectTransform.localScale = originalScale;
-        rectTransform.localRotation = originalRotation;
-        rectTransform.localPosition = originalPosition;
+        _currentState = 0;
+        _rectTransform.localScale = _originalScale;
+        _rectTransform.localRotation = _originalRotation;
+        _rectTransform.localPosition = _originalPosition;
         //highlightEffect.SetActive(false);
-        playArrow.SetActive(false);
+        _playArrow.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (currentState == 0)
+        if (_currentState == 0)
         {
-            originalPosition = rectTransform.localPosition;
-            originalRotation = rectTransform.localRotation;
-            originalScale = rectTransform.localScale;
+            _originalPosition = _rectTransform.localPosition;
+            _originalRotation = _rectTransform.localRotation;
+            _originalScale = _rectTransform.localScale;
 
-            audioManager.PlaySfx(audioManager.hoverCard);
+            AudioManager.PlaySfx(AudioManager.HoverCard);
 
-            currentState = 1; // Hover state
+            _currentState = 1; // Hover state
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (currentState == 1)
+        if (_currentState == 1)
         {
             TransitionToState0();
         }
@@ -110,39 +110,39 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (currentState == 1 && gameManager.IsPlayerTurn)
+        if (_currentState == 1 && _gameManager.IsPlayerTurn)
         {
-            currentState = 2; // Drag state
+            _currentState = 2; // Drag state
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle
-                (canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out originalLocalPointerPos);
+                (_canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out _originalLocalPointerPos);
 
-            originalPanelLocalPos = rectTransform.localPosition;
+            _originalPanelLocalPos = _rectTransform.localPosition;
         }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (currentState == 2)
+        if (_currentState == 2)
         {
-            canvasGroup.blocksRaycasts = false; //Disable raycast blocking so that other UI elements can receive raycasts while dragging
+            _canvasGroup.blocksRaycasts = false; //Disable raycast blocking so that other UI elements can receive raycasts while dragging
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(currentState == 2)
+        if(_currentState == 2)
         {
             Vector2 localPointerPos;
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out localPointerPos))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out localPointerPos))
             {
-                rectTransform.position = Vector3.Lerp(rectTransform.position, Input.mousePosition, lerpFactor);
+                _rectTransform.position = Vector3.Lerp(_rectTransform.position, Input.mousePosition, _lerpFactor);
 
-                if (rectTransform.localPosition.y > cardPlay.y)
+                if (_rectTransform.localPosition.y > CardPlay.y)
                 {
-                    currentState = 3; // Play state
-                    playArrow.SetActive(true);
-                    rectTransform.localPosition = Vector3.Lerp(rectTransform.position, playPos, lerpFactor);
+                    _currentState = 3; // Play state
+                    _playArrow.SetActive(true);
+                    _rectTransform.localPosition = Vector3.Lerp(_rectTransform.position, _playPos, _lerpFactor);
                 }
             }
         }
@@ -150,10 +150,10 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (currentState == 2 || currentState == 3)
+        if (_currentState == 2 || _currentState == 3)
         {
-            canvasGroup.blocksRaycasts = true; //Re-enable raycast blocking so that the UI object can receive raycasts again
-            if (currentState == 2)
+            _canvasGroup.blocksRaycasts = true; //Re-enable raycast blocking so that the UI object can receive raycasts again
+            if (_currentState == 2)
             {
                 TransitionToState0();
             }
@@ -163,29 +163,29 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
     private void HandleHoverState()
     {
         //highlightEffect.SetActive(true);
-        rectTransform.localScale = originalScale * selectScale;
+        _rectTransform.localScale = _originalScale * _selectScale;
     }
 
     private void HandleDragState()
     {
         //set card rotation to zero
-        rectTransform.localRotation = Quaternion.identity;
+        _rectTransform.localRotation = Quaternion.identity;
     }
 
     private void HandlePlayState()
     {
-        rectTransform.localPosition = playPos;
-        rectTransform.localRotation = Quaternion.identity;
+        _rectTransform.localPosition = _playPos;
+        _rectTransform.localRotation = Quaternion.identity;
 
-        if(Input.mousePosition.y < cardPlay.y)
+        if(Input.mousePosition.y < CardPlay.y)
         {
-            currentState = 2; // Transition back to drag state
-            playArrow.SetActive(false);
+            _currentState = 2; // Transition back to drag state
+            _playArrow.SetActive(false);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            audioManager.PlaySfx(audioManager.playCard);
+            AudioManager.PlaySfx(AudioManager.PlayCard);
             PlayCard();
         }
     }
@@ -193,28 +193,28 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
     void PlayCard()
     {
         CardDisplay cardDisplay = GetComponent<CardDisplay>();
-        Card target = cardDisplay.cardData;
+        Card target = cardDisplay.CardData;
         // Here you can add logic to handle the card being played
         TransitionToState0();
 
-        if(cardDisplay.isCopied)
+        if(cardDisplay.IsCopied)
         {
-            fieldManager.AddCopiedCardToField(target);
+            _fieldManager.AddCopiedCardToField(target);
         }
         else
         {
-            fieldManager.AddCardToField(target);
+            _fieldManager.AddCardToField(target);
         }
-        handManager.RemoveCardFromHand(target);
+        _handManager.RemoveCardFromHand(target);
 
 
-        if (target.cardType.Contains(Card.CardType.Power))
+        if (target.CardType.Contains(Card.CardTypes.Power))
         {
-            target.cardEffect.ApplyEffect();
+            target.CardEffect.ApplyEffect();
         }
         else
         {
-            gameManager.EndPlayerTurn();
+            _gameManager.EndPlayerTurn();
         }
     }
 }

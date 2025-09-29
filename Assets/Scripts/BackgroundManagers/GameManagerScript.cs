@@ -6,28 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public static GameManagerScript instance { get; private set; }
+    public static GameManagerScript Instance { get; private set; }
 
-    [SerializeField] private int playerHealth;
-    [SerializeField] private int playerMaxHealth;
-    [SerializeField] private int enemyHealth;
-    [SerializeField] private int enemyMaxHealth;
-    [SerializeField] private int difficultyLevel;
-    public int debtAmount = 500;
-    public int turnsLeft = 5;
-    public int rewardMultiplier;
-    public int selectedDifficulty = 1; //default difficulty
-    public int additionalPlayerPoints = 0;
-    public int additionalEnemyPoints = 0;
-    public int playerEndTotalPoints = 0;
-    public int enemyEndTotalPoints = 0;
+    [SerializeField] private int _playerHealth;
+    [SerializeField] private int _playerMaxHealth;
+    [SerializeField] private int _enemyHealth;
+    [SerializeField] private int _enemyMaxHealth;
+    [SerializeField] private int _difficultyLevel;
+    public int DebtAmount = 500;
+    public int TurnsLeft = 5;
+    public int RewardMultiplier;
+    public int SelectedDifficulty = 1; //default difficulty
+    public int AdditionalPlayerPoints = 0;
+    public int AdditionalEnemyPoints = 0;
+    public int PlayerEndTotalPoints = 0;
+    public int EnemyEndTotalPoints = 0;
 
-    public bool isPlayerTurn;
+    public bool PlayerOutOfMoves = false;
+    public bool EnemyOutOfMoves = false;
 
-    public bool playerOutOfMoves = false;
-    public bool enemyOutOfMoves = false;
-
-    Coroutine roundCoroutine;
+    private Coroutine _roundCoroutine;
 
     public OptionsManagerScript OptionsManagerScript { get; private set; }
     public AudioManagerScript AudioManagerScript { get; private set; }
@@ -36,16 +34,49 @@ public class GameManagerScript : MonoBehaviour
     public UIManagerScript UIManagerScript { get; private set; }
     public CookieManagerScript CookieManagerScript { get; private set; }
 
+    public int PlayerHealth
+    {
+        get { return _playerHealth; }
+        set { _playerHealth = Mathf.Clamp(value, 0, value); } // Ensure health doesn't go below 0
+    }
+    public int PlayerMaxHealth
+    {
+        get { return _playerMaxHealth; }
+        set { _playerMaxHealth = Mathf.Max(1, value); } // Ensure max health is at least 1
+    }
+
+    public int EnemyHealth
+    {
+        get { return _enemyHealth; }
+        set { _enemyHealth = Mathf.Clamp(value, 0, value); } // Ensure health doesn't go below 0
+    }
+    public int EnemyMaxHealth
+    {
+        get { return _enemyMaxHealth; }
+        set { _enemyMaxHealth = Mathf.Max(1, value); } // Ensure max health is at least 1
+    }
+
+    public int DifficultyLevel
+    {
+        get { return _difficultyLevel; }
+        set { _difficultyLevel = Mathf.Clamp(value, 1, 5); } // Clamp difficulty between 1 and 10
+    }
+
+    public bool IsPlayerTurn
+    {
+        get { return IsPlayerTurn; }
+        set { IsPlayerTurn = value; }
+    }
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(this.gameObject);
             InitializeManagers();
         }
@@ -97,45 +128,6 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    public int PlayerHealth
-    {
-        get { return playerHealth; }
-        set { playerHealth = Mathf.Clamp(value, 0, value); } // Ensure health doesn't go below 0
-    }
-    public int PlayerMaxHealth
-    {
-        get { return playerMaxHealth; }
-        set { playerMaxHealth = Mathf.Max(1, value); } // Ensure max health is at least 1
-    }
-
-    public int EnemyHealth
-    {
-        get { return enemyHealth; }
-        set { enemyHealth = Mathf.Clamp(value, 0, value); } // Ensure health doesn't go below 0
-    }
-    public int EnemyMaxHealth
-    {
-        get { return enemyMaxHealth; }
-        set { enemyMaxHealth = Mathf.Max(1, value); } // Ensure max health is at least 1
-    }
-
-    public int DifficultyLevel
-    {
-        get { return difficultyLevel; }
-        set { difficultyLevel = Mathf.Clamp(value, 1, 5); } // Clamp difficulty between 1 and 10
-    }
-
-    public bool IsPlayerTurn
-    {
-        get { return isPlayerTurn; }
-        set { isPlayerTurn = value; }
-    }
-
-    private void Update()
-    {
-
-    }
-
     public void InitializeGameplayManagers()
     {
         UIManagerScript = FindObjectOfType<UIManagerScript>();
@@ -183,7 +175,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void StartGame()
     {
-        switch(selectedDifficulty)
+        switch(SelectedDifficulty)
         {
             case 1:
                 PlayDifficultyLevelOne();
@@ -205,19 +197,19 @@ public class GameManagerScript : MonoBehaviour
 
     public void EndPlayerTurn()
     {
-        isPlayerTurn = false;
+        IsPlayerTurn = false;
         NextTurn();
     }
 
     public void StartPlayerTurn()
     {
-        isPlayerTurn = true;
+        IsPlayerTurn = true;
         NextTurn();
     }
 
     void NextTurn()
     {
-        if (playerOutOfMoves && enemyOutOfMoves)
+        if (PlayerOutOfMoves && EnemyOutOfMoves)
         {
             //round ends
             EvaluateRound();
@@ -228,7 +220,7 @@ public class GameManagerScript : MonoBehaviour
         FieldManagerScript field;
 
         //sets reference to hand and field for each entity's turn
-        if (isPlayerTurn)
+        if (IsPlayerTurn)
         {
             hand = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
             field = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
@@ -253,17 +245,17 @@ public class GameManagerScript : MonoBehaviour
 
     void CheckForLegalPlay(HandManagerScript hand, FieldManagerScript field)
     {
-        if(hand.onHandCards.Count == 0)
+        if(hand.OnHandCards.Count == 0)
         {
             // No cards in hand, end turn immediately
-            if (isPlayerTurn)
+            if (IsPlayerTurn)
             {
-                playerOutOfMoves = true;
+                PlayerOutOfMoves = true;
                 EndPlayerTurn();
             }
             else
             {
-                enemyOutOfMoves = true;
+                EnemyOutOfMoves = true;
                 Debug.Log("Enemy has no cards in hand, ending turn.");
                 StartPlayerTurn();
             }
@@ -274,12 +266,12 @@ public class GameManagerScript : MonoBehaviour
 
         List<Card> legalCards = new List<Card>();
 
-        if (!isPlayerTurn)
+        if (!IsPlayerTurn)
         {
-            for (int i = 0; i < hand.onHandCards.Count; i++)
+            for (int i = 0; i < hand.OnHandCards.Count; i++)
             {
-                Card card = hand.onHandCards[i].GetComponent<CardDisplay>().cardData;
-                if (field.totalCardValue < 21)
+                Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
+                if (field.TotalCardValue < 21)
                 {
                     legalCards.Add(card);
                 }
@@ -293,16 +285,16 @@ public class GameManagerScript : MonoBehaviour
             else
             {
                 // Enemy has no legal plays, ending turn.
-                enemyOutOfMoves = true;
+                EnemyOutOfMoves = true;
                 StartPlayerTurn();
             }
         }
         else
         {
-            for (int i=0;i<hand.onHandCards.Count;i++)
+            for (int i=0;i<hand.OnHandCards.Count;i++)
             {
-                Card card = hand.onHandCards[i].GetComponent<CardDisplay>().cardData;
-                if (field.totalCardValue < 21 || card.cardType.Contains(Card.CardType.Power))
+                Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
+                if (field.TotalCardValue < 21 || card.CardType.Contains(Card.CardTypes.Power))
                 {
                     legalCards.Add(card);
                 }
@@ -316,7 +308,7 @@ public class GameManagerScript : MonoBehaviour
             else
             {
                 // Player has no legal plays, ending turn.
-                playerOutOfMoves = true;
+                PlayerOutOfMoves = true;
                 Debug.Log("Player has no legal plays, ending turn.");
                 EndPlayerTurn();
             }
@@ -326,12 +318,12 @@ public class GameManagerScript : MonoBehaviour
     void EnemyTurn(HandManagerScript hand, FieldManagerScript field, List<Card> allCards)
     {
         // Always find the best card
-        Card bestCard = allCards.OrderByDescending(c => c.cardPoints).First();
+        Card bestCard = allCards.OrderByDescending(c => c.CardPoints).First();
 
         Card chosenCard;
 
         // Roll chance to play optimally (higher difficulty = higher chance)
-        float optimalChance = difficultyLevel / 8f; // 0.2 at diff=1, 1.0 at diff=7
+        float optimalChance = _difficultyLevel / 8f; // 0.2 at diff=1, 1.0 at diff=7
         if (Random.value <= optimalChance)
         {
             // Pick the best card
@@ -354,12 +346,12 @@ public class GameManagerScript : MonoBehaviour
     // Both players are out of moves, reset for next round
     void EvaluateRound()
     {
-        playerOutOfMoves = false;
-        enemyOutOfMoves = false;
+        PlayerOutOfMoves = false;
+        EnemyOutOfMoves = false;
         Debug.Log("Both players out of moves, evaluating round.");
 
-        int playerTotal = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>().totalCardValue + additionalPlayerPoints;
-        int enemyTotal = GameObject.Find("EnemyFieldManager").GetComponent<FieldManagerScript>().totalCardValue + additionalEnemyPoints;
+        int playerTotal = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>().TotalCardValue + AdditionalPlayerPoints;
+        int enemyTotal = GameObject.Find("EnemyFieldManager").GetComponent<FieldManagerScript>().TotalCardValue + AdditionalEnemyPoints;
 
         //calculate health penalties
         int penalty = 0;
@@ -368,7 +360,7 @@ public class GameManagerScript : MonoBehaviour
             if(enemyTotal > playerTotal)
             {
                 penalty = enemyTotal - 21;
-                enemyHealth -= penalty;
+                _enemyHealth -= penalty;
             }
             else if (playerTotal > enemyTotal)
             {
@@ -381,12 +373,12 @@ public class GameManagerScript : MonoBehaviour
             if(playerTotal > 21)
             {
                 penalty = playerTotal - 21;
-                playerHealth -= penalty;
+                _playerHealth -= penalty;
             }
             else
             {
                 int diff = (playerTotal - enemyTotal);
-                enemyHealth -= diff;
+                _enemyHealth -= diff;
             }
         }
         else if (enemyTotal > playerTotal)
@@ -394,7 +386,7 @@ public class GameManagerScript : MonoBehaviour
             if(enemyTotal > 21)
             {
                 penalty = enemyTotal - 21;
-                enemyHealth -= penalty;
+                _enemyHealth -= penalty;
             }
             else
             {
@@ -404,20 +396,20 @@ public class GameManagerScript : MonoBehaviour
         }
 
         //clamp health to not go below 0
-        if (enemyHealth < 0)
+        if (_enemyHealth < 0)
         {
-            enemyHealth = 0;
+            _enemyHealth = 0;
         }
-        if (playerHealth < 0)
+        if (_playerHealth < 0)
         {
-            playerHealth = 0;
+            _playerHealth = 0;
         }
 
         //reset additional points
-        additionalPlayerPoints = 0;
-        additionalEnemyPoints = 0;
+        AdditionalPlayerPoints = 0;
+        AdditionalEnemyPoints = 0;
 
-        AudioManagerScript.PlaySfx(AudioManagerScript.shuffleDeck);
+        AudioManagerScript.PlaySfx(AudioManagerScript.ShuffleDeck);
 
         //return all drawn cards back to deck
         foreach (HandManagerScript h in FindObjectsOfType<HandManagerScript>())
@@ -432,24 +424,24 @@ public class GameManagerScript : MonoBehaviour
         // Check for end game
         if (PlayerHealth <= 0)
         {
-            AudioManagerScript.musicSource.Stop();
-            AudioManagerScript.PlaySfx(AudioManagerScript.loseSound);
+            AudioManagerScript.MusicSource.Stop();
+            AudioManagerScript.PlaySfx(AudioManagerScript.LoseSound);
             SceneManager.LoadScene("GameOverScene");
             return;
         }
         else if (EnemyHealth <= 0)
         {
-            if(selectedDifficulty < 5)
+            if(SelectedDifficulty < 5)
             {
-                AudioManagerScript.musicSource.Stop();
-                AudioManagerScript.PlaySfx(AudioManagerScript.winSound);
-                UIManagerScript.winCoroutine = StartCoroutine(UIManagerScript.DisplayWinScreen());
+                AudioManagerScript.MusicSource.Stop();
+                AudioManagerScript.PlaySfx(AudioManagerScript.WinSound);
+                UIManagerScript.WinCoroutine = StartCoroutine(UIManagerScript.DisplayWinScreen());
                 TutorialManagerScript tutorial = FindObjectOfType<TutorialManagerScript>();
-                turnsLeft -= 1;
-                if (tutorial != null && tutorial.isTutorialActive)
+                TurnsLeft -= 1;
+                if (tutorial != null && tutorial.IsTutorialActive)
                 {
-                    tutorial.isTutorialActive = false;
-                    tutorial.tutorialUIText.SetActive(false);
+                    tutorial.IsTutorialActive = false;
+                    tutorial.TutorialUIText.SetActive(false);
                 }
                 // display shop for deck update etc
                 // make player choose between difficulty (1-3-5)
@@ -458,32 +450,32 @@ public class GameManagerScript : MonoBehaviour
             else
             {
                 // Final boss defeated, trigger special ending
-                UIManagerScript.finalBossWinCoroutine = StartCoroutine(UIManagerScript.FinalBossWinTransition());
+                UIManagerScript.FinalBossWinCoroutine = StartCoroutine(UIManagerScript.FinalBossWinTransition());
                 return;
             }
         }
 
         
 
-        roundCoroutine = StartCoroutine(ContinueRound());
+        _roundCoroutine = StartCoroutine(ContinueRound());
     }
 
     IEnumerator ContinueRound()
     {
         yield return new WaitForSeconds(1f); // small delay before next round
 
-        PlayerDeckManagerScript.currentHandSize = 0;
-        EnemyDeckManagerScript.currentHandSize = 0;
-        PlayerDeckManagerScript.handInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
-        EnemyDeckManagerScript.handInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
+        PlayerDeckManagerScript.CurrentHandSize = 0;
+        EnemyDeckManagerScript.CurrentHandSize = 0;
+        PlayerDeckManagerScript.HandInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
+        EnemyDeckManagerScript.HandInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
 
-        if(playerOutOfMoves)
+        if(PlayerOutOfMoves)
         {
-            playerOutOfMoves = false;
+            PlayerOutOfMoves = false;
         }
 
         StartPlayerTurn();
-        roundCoroutine = null;
+        _roundCoroutine = null;
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -491,59 +483,59 @@ public class GameManagerScript : MonoBehaviour
 
     void PlayDifficultyLevelOne()
     {
-        playerHealth = playerMaxHealth = 30;
-        enemyHealth = enemyMaxHealth = 15;
-        difficultyLevel = 1;
-        rewardMultiplier = 1;
+        _playerHealth = _playerMaxHealth = 30;
+        _enemyHealth = _enemyMaxHealth = 15;
+        _difficultyLevel = 1;
+        RewardMultiplier = 1;
     }
 
     void PlayDifficultyLevelTwo()
     {
-        playerHealth = playerMaxHealth = 30;
-        enemyHealth = enemyMaxHealth = 20;
-        difficultyLevel = 2;
-        rewardMultiplier = 1;
+        _playerHealth = _playerMaxHealth = 30;
+        _enemyHealth = _enemyMaxHealth = 20;
+        _difficultyLevel = 2;
+        RewardMultiplier = 1;
 
-        PlayerDeckManagerScript.handInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
-        EnemyDeckManagerScript.handInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
+        PlayerDeckManagerScript.HandInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
+        EnemyDeckManagerScript.HandInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
 
         StartPlayerTurn();
     }
 
     void PlayDifficultyLevelThree()
     {
-        playerHealth = playerMaxHealth = 30;
-        enemyHealth = enemyMaxHealth = 25;
-        difficultyLevel = 3;
-        rewardMultiplier = 2;
+        _playerHealth = _playerMaxHealth = 30;
+        _enemyHealth = _enemyMaxHealth = 25;
+        _difficultyLevel = 3;
+        RewardMultiplier = 2;
 
-        PlayerDeckManagerScript.handInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
-        EnemyDeckManagerScript.handInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
+        PlayerDeckManagerScript.HandInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
+        EnemyDeckManagerScript.HandInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
 
         StartPlayerTurn();
     }
 
     void PlayDifficultyLevelFour()
     {
-        playerHealth = playerMaxHealth = 30;
-        enemyHealth = enemyMaxHealth = 30;
-        difficultyLevel = 3;
+        _playerHealth = _playerMaxHealth = 30;
+        _enemyHealth = _enemyMaxHealth = 30;
+        _difficultyLevel = 3;
 
-        PlayerDeckManagerScript.handInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
-        EnemyDeckManagerScript.handInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
+        PlayerDeckManagerScript.HandInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
+        EnemyDeckManagerScript.HandInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
 
         StartPlayerTurn();
     }
 
     void PlayDifficultyLevelFive()
     {
-        playerHealth = playerMaxHealth = 30;
-        enemyHealth = enemyMaxHealth = 35;
-        difficultyLevel = 5;
-        rewardMultiplier = 4;
+        _playerHealth = _playerMaxHealth = 30;
+        _enemyHealth = _enemyMaxHealth = 35;
+        _difficultyLevel = 5;
+        RewardMultiplier = 4;
 
-        PlayerDeckManagerScript.handInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
-        EnemyDeckManagerScript.handInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
+        PlayerDeckManagerScript.HandInitializationCoroutine = StartCoroutine(PlayerDeckManagerScript.InitializeHand());
+        EnemyDeckManagerScript.HandInitializationCoroutine = StartCoroutine(EnemyDeckManagerScript.InitializeHand());
 
         StartPlayerTurn();
     }
@@ -552,12 +544,12 @@ public class GameManagerScript : MonoBehaviour
 
     public void OpenShop()
     {
-        CookieManagerScript.ClaimRewards(rewardMultiplier);
+        CookieManagerScript.ClaimRewards(RewardMultiplier);
 
-        if(UIManagerScript.winCoroutine != null)
+        if(UIManagerScript.WinCoroutine != null)
         {
-            StopCoroutine(UIManagerScript.winCoroutine);
-            UIManagerScript.winCoroutine = null;
+            StopCoroutine(UIManagerScript.WinCoroutine);
+            UIManagerScript.WinCoroutine = null;
         }
 
         SceneManager.LoadScene("ShopScene");

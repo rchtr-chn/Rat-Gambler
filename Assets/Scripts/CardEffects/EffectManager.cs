@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class EffectManager : MonoBehaviour
 {
-    GameManagerScript gameManager;
-    public GameObject selectTableSidePrompt;
-    public GameObject copyCardPrompt;
-    public GameObject promptParent;
+    private GameManagerScript _gameManager;
+    public GameObject SelectTableSidePrompt;
+    public GameObject CopyCardPrompt;
+    public GameObject PromptParent;
     public IEnumerator Add3PointsAnyCoroutine()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        GameObject promptObj = Instantiate(selectTableSidePrompt, Vector3.zero, Quaternion.identity, promptParent.transform);
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        GameObject promptObj = Instantiate(SelectTableSidePrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
         promptObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 
         bool mouseClicked = false;
@@ -25,12 +23,12 @@ public class EffectManager : MonoBehaviour
                 mouseClicked = true;
                 if(Input.mousePosition.y > Screen.height / 2)
                 {
-                    gameManager.additionalEnemyPoints += 3;
+                    _gameManager.AdditionalEnemyPoints += 3;
                     Debug.Log("Top side clicked");
                 }
                 else
                 {
-                    gameManager.additionalPlayerPoints += 3;
+                    _gameManager.AdditionalPlayerPoints += 3;
                     Debug.Log("Bottom side clicked");
                 }
                 Destroy(promptObj);
@@ -38,13 +36,13 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
 
-        gameManager.EndPlayerTurn();
+        _gameManager.EndPlayerTurn();
     }
 
     public IEnumerator Minus3PointsAnyCoroutine()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        GameObject promptObj = Instantiate(selectTableSidePrompt, Vector3.zero, Quaternion.identity, promptParent.transform);
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        GameObject promptObj = Instantiate(SelectTableSidePrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
         promptObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 
         bool mouseClicked = false;
@@ -55,12 +53,12 @@ public class EffectManager : MonoBehaviour
                 mouseClicked = true;
                 if (Input.mousePosition.y > Screen.height / 2)
                 {
-                    gameManager.additionalEnemyPoints -= 3;
+                    _gameManager.AdditionalEnemyPoints -= 3;
                     Debug.Log("Top side clicked");
                 }
                 else
                 {
-                    gameManager.additionalPlayerPoints -= 3;
+                    _gameManager.AdditionalPlayerPoints -= 3;
                     Debug.Log("Bottom side clicked");
                 }
                 Destroy(promptObj);
@@ -68,13 +66,13 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
 
-        gameManager.EndPlayerTurn();
+        _gameManager.EndPlayerTurn();
     }
 
     public IEnumerator CopyCardEffect()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        GameObject promptObj = Instantiate(copyCardPrompt, Vector3.zero, Quaternion.identity, promptParent.transform);
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        GameObject promptObj = Instantiate(CopyCardPrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
         promptObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         GameObject playerField = GameObject.Find("PlayerField");
         GameObject enemyField = GameObject.Find("EnemyField");
@@ -99,7 +97,7 @@ public class EffectManager : MonoBehaviour
                     Transform grandParentTransform = parentTransform.parent;
                     GameObject obj = grandParentTransform.gameObject;
 
-                    Card card = obj.GetComponent<CardDisplay>().cardData;
+                    Card card = obj.GetComponent<CardDisplay>().CardData;
                     if ((result.gameObject.transform.IsChildOf(playerField.transform) || result.gameObject.transform.IsChildOf(enemyField.transform)) && card != null)
                     {
                         GameObject handManagerObj = GameObject.Find("PlayerHandManager");
@@ -115,7 +113,7 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
         
-        gameManager.EndPlayerTurn();
+        _gameManager.EndPlayerTurn();
     }
 
     //public IEnumerator SwapCards()

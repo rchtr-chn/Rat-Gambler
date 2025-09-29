@@ -1,27 +1,20 @@
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HandManagerScript : MonoBehaviour
 {
-    public GameObject cardPrefab; //assign in inspector
-    public Transform handTransform; //root of hand pos
-    [SerializeField] float fanSpread = -8f; //how much to spread cards in hand
-    [SerializeField] float horizontalSpacing = 100f; //spacing between cards
-    [SerializeField] float verticalSpacing = 30f; //spacing between rows if needed
+    public GameObject CardPrefab; //assign in inspector
+    public Transform HandTransform; //root of hand pos
+    [SerializeField] private float _fanSpread = -8f; //how much to spread cards in hand
+    [SerializeField] private float _horizontalSpacing = 100f; //spacing between cards
+    [SerializeField] private float _verticalSpacing = 30f; //spacing between rows if needed
 
-    public List<GameObject> onHandCards = new List<GameObject>(); //list of cards in deck
-
-    private void Start()
-    {
-        
-    }
+    public List<GameObject> OnHandCards = new List<GameObject>(); //list of cards in deck
 
     private void Update()
     {
-        if(onHandCards.Count > 0 && SceneManager.GetActiveScene().name == "GameplayScene")
+        if(OnHandCards.Count > 0 && SceneManager.GetActiveScene().name == "GameplayScene")
         {
             CheckForLegalPlays();
         }
@@ -30,12 +23,12 @@ public class HandManagerScript : MonoBehaviour
     public void AddCardToHand(Card cardData)
     {
         //instantiate card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
-        onHandCards.Add(newCard);
+        GameObject newCard = Instantiate(CardPrefab, HandTransform.position, Quaternion.identity, HandTransform);
+        OnHandCards.Add(newCard);
 
         //set card data
-        newCard.GetComponent<CardDisplay>().cardData = cardData;
-        newCard.GetComponent<CardDisplay>().isCopied = false;
+        newCard.GetComponent<CardDisplay>().CardData = cardData;
+        newCard.GetComponent<CardDisplay>().IsCopied = false;
 
         //flip card if in enemy hand
         if (gameObject.name == "EnemyHandManager")
@@ -48,12 +41,12 @@ public class HandManagerScript : MonoBehaviour
     public void AddCopiedCardToHand(Card cardData)
     {
         //instantiate card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
-        onHandCards.Add(newCard);
+        GameObject newCard = Instantiate(CardPrefab, HandTransform.position, Quaternion.identity, HandTransform);
+        OnHandCards.Add(newCard);
 
         //set card data
-        newCard.GetComponent<CardDisplay>().cardData = cardData;
-        newCard.GetComponent<CardDisplay>().isCopied = true;
+        newCard.GetComponent<CardDisplay>().CardData = cardData;
+        newCard.GetComponent<CardDisplay>().IsCopied = true;
 
         //flip card if in enemy hand
         if (gameObject.name == "EnemyHandManager")
@@ -66,12 +59,12 @@ public class HandManagerScript : MonoBehaviour
 
     public void RemoveCardFromHand(Card cardData)
     {
-        for (int i = 0; i < onHandCards.Count; i++)
+        for (int i = 0; i < OnHandCards.Count; i++)
         {
-            if (onHandCards[i].GetComponent<CardDisplay>().cardData == cardData)
+            if (OnHandCards[i].GetComponent<CardDisplay>().CardData == cardData)
             {
-                Destroy(onHandCards[i]);
-                onHandCards.RemoveAt(i);
+                Destroy(OnHandCards[i]);
+                OnHandCards.RemoveAt(i);
                 break;
             }
         }
@@ -81,27 +74,27 @@ public class HandManagerScript : MonoBehaviour
 
     public void UpdateHandPositions()
     {
-        int cardCount = onHandCards.Count;
+        int cardCount = OnHandCards.Count;
 
         if (cardCount == 1)
         {
-            onHandCards[0].transform.localRotation = Quaternion.Euler(0, 0, 0);
-            onHandCards[0].transform.localPosition = new Vector3(0, 0, 0);
+            OnHandCards[0].transform.localRotation = Quaternion.Euler(0, 0, 0);
+            OnHandCards[0].transform.localPosition = new Vector3(0, 0, 0);
             return;
         }
 
         for(int i=0; i < cardCount; i++)
         {
-            float rotAngle = (fanSpread * (i - (cardCount-1) / 2f));
-            onHandCards[i].transform.localRotation = Quaternion.Euler(0, 0, rotAngle);
+            float rotAngle = (_fanSpread * (i - (cardCount-1) / 2f));
+            OnHandCards[i].transform.localRotation = Quaternion.Euler(0, 0, rotAngle);
 
-            float xOffset = (horizontalSpacing * (i - (cardCount - 1) / 2f));
+            float xOffset = (_horizontalSpacing * (i - (cardCount - 1) / 2f));
 
             float normalizedPos = (2f * i / (cardCount - 1) - 1f); // Normalize position between -1 and 1
-            float yOffset = verticalSpacing * (1 - normalizedPos * normalizedPos); // Adjust vertical position based on normalized position
+            float yOffset = _verticalSpacing * (1 - normalizedPos * normalizedPos); // Adjust vertical position based on normalized position
 
             //set card pos
-            onHandCards[i].transform.localPosition = new Vector3(xOffset, yOffset, 0);
+            OnHandCards[i].transform.localPosition = new Vector3(xOffset, yOffset, 0);
         }
     }
 
@@ -109,28 +102,28 @@ public class HandManagerScript : MonoBehaviour
     {
         FieldManagerScript fieldManager = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
 
-        for (int i = 0; i < onHandCards.Count; i++)
+        for (int i = 0; i < OnHandCards.Count; i++)
         {
-            GameObject obj = onHandCards[i];
-            Card card = obj.GetComponent<CardDisplay>().cardData;
-            if (card.cardType.Contains(Card.CardType.Poker))
+            GameObject obj = OnHandCards[i];
+            Card card = obj.GetComponent<CardDisplay>().CardData;
+            if (card.CardType.Contains(Card.CardTypes.Poker))
             {
                 //int potentialValue = fieldManager.totalCardValue + card.cardPoints;
 
                 //dim illegal cards in player hand
                 if (gameObject.name == "PlayerHandManager")
                 {
-                    DimIllegalCards(obj, fieldManager.totalCardValue >= 21);
+                    DimIllegalCards(obj, fieldManager.TotalCardValue >= 21);
                 }
 
-                if (fieldManager.totalCardValue >= 21)
+                if (fieldManager.TotalCardValue >= 21)
                 {
-                    obj.GetComponent<CardDisplay>().isPlayable = false;
+                    obj.GetComponent<CardDisplay>().IsPlayable = false;
                     obj.GetComponent<CardMovementScript>().enabled = false;
                 }
                 else
                 {
-                    obj.GetComponent<CardDisplay>().isPlayable = true;
+                    obj.GetComponent<CardDisplay>().IsPlayable = true;
                     obj.GetComponent<CardMovementScript>().enabled = true;
                 }
             }
@@ -156,20 +149,20 @@ public class HandManagerScript : MonoBehaviour
             return;
         }
 
-        for (int i = onHandCards.Count - 1; i >= 0; i--)
+        for (int i = OnHandCards.Count - 1; i >= 0; i--)
         {
-            GameObject obj = onHandCards[i];
-            if (obj.GetComponent<CardDisplay>().isCopied)
+            GameObject obj = OnHandCards[i];
+            if (obj.GetComponent<CardDisplay>().IsCopied)
             {
-                onHandCards.RemoveAt(i);
+                OnHandCards.RemoveAt(i);
                 Destroy(obj);
             }
             else 
             {
-                Card cardData = obj.GetComponent<CardDisplay>().cardData;
-                deckManager.playingDeck.Add(cardData);
-                onHandCards.RemoveAt(i);
-                deckManager.currentHandSize--;
+                Card cardData = obj.GetComponent<CardDisplay>().CardData;
+                deckManager.PlayingDeck.Add(cardData);
+                OnHandCards.RemoveAt(i);
+                deckManager.CurrentHandSize--;
                 Destroy(obj);
             }
         }
@@ -178,6 +171,6 @@ public class HandManagerScript : MonoBehaviour
 
     void DimIllegalCards(GameObject obj, bool isPlayable)
     {
-        obj.GetComponent<CardDisplay>().highlightImage.gameObject.SetActive(isPlayable);
+        obj.GetComponent<CardDisplay>().HighlightImage.gameObject.SetActive(isPlayable);
     }
 }

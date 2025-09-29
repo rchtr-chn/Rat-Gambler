@@ -1,20 +1,18 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card Game/Card")]
 public class Card : ScriptableObject
 {
-    public Sprite cardImage;
-    public string cardName;
-    public List<CardType> cardType;
-    public int cardPoints;
-    public bool isPlayable;
+    public Sprite CardImage;
+    public string CardName;
+    public List<CardTypes> CardType;
+    public int CardPoints;
+    public bool IsPlayable;
 
-    public CardEffect cardEffect;
+    public CardEffect CardEffect;
 
-    public enum CardType
+    public enum CardTypes
     {
         Aces, Poker, Power
     }

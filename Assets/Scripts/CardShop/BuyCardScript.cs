@@ -1,25 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuyCardScript : MonoBehaviour, IDropHandler
 {
-    AudioManagerScript audioManager;
-    public HandManagerScript handManager;
-    public CookieManagerScript cookieManager;
-    public ShopCardScript shopCard;
+    private AudioManagerScript _audioManager;
+    public HandManagerScript HandManager;
+    public CookieManagerScript CookieManager;
+    public ShopCardScript ShopCard;
 
     private void Start()
     {
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerScript>();
-        handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
-        cookieManager = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>();
+        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerScript>();
+        HandManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
+        CookieManager = GameObject.FindGameObjectWithTag("CookieManager").GetComponent<CookieManagerScript>();
     }
     public void OnDrop(PointerEventData eventData)
     {
         GameObject obj = eventData.pointerDrag;
-        shopCard = obj.GetComponent<ShopCardScript>();
+        ShopCard = obj.GetComponent<ShopCardScript>();
 
         if(!CheckRequirements(obj))
         {
@@ -27,22 +25,22 @@ public class BuyCardScript : MonoBehaviour, IDropHandler
             return;
         }
 
-        cookieManager.playerCookies -= shopCard.cost;
-        audioManager.PlaySfx(audioManager.buyCard);
+        CookieManager.PlayerCookies -= ShopCard.Cost;
+        _audioManager.PlaySfx(_audioManager.BuyCard);
         GameObject droppedObject = eventData.pointerDrag; // Get the object being dragged
-        handManager.AddCardToHand(droppedObject.GetComponent<CardDisplay>().cardData);
+        HandManager.AddCardToHand(droppedObject.GetComponent<CardDisplay>().CardData);
         Destroy(droppedObject); // Destroy the dropped object from shop
-        handManager.UpdateHandPositions();
+        HandManager.UpdateHandPositions();
     }
 
     bool CheckRequirements(GameObject obj)
     {
-        if (handManager.onHandCards.Count >= 7)
+        if (HandManager.OnHandCards.Count >= 7)
         {
             Debug.Log("BuyCardScript: Cannot buy more cards, hand limit reached");
             return false;
         }
-        if (cookieManager.playerCookies <= shopCard.cost)
+        if (CookieManager.PlayerCookies <= ShopCard.Cost)
         {
             Debug.Log("BuyCardScript: Cannot buy card, not enough cookies");
             return false;
