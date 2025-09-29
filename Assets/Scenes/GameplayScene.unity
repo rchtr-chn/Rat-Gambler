@@ -172,21 +172,81 @@ PrefabInstance:
       value: Gameplay-UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: Wagered
+      value: 
+      objectReference: {fileID: 158201128}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: EnemyPoint
+      value: 
+      objectReference: {fileID: 553266573}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: ShopButton
+      value: 
+      objectReference: {fileID: 225559430}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: enemyPoint
       value: 
       objectReference: {fileID: 553266573}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: EnemyHealth
+      value: 
+      objectReference: {fileID: 1172876323}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: PlayerPoint
+      value: 
+      objectReference: {fileID: 2027000731}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: playerPoint
       value: 
       objectReference: {fileID: 2027000731}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: PlayerHealth
+      value: 
+      objectReference: {fileID: 1236225897}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinGroup
+      value: 
+      objectReference: {fileID: 1438230788}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: TotalWinnings
+      value: 
+      objectReference: {fileID: 1052295944}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: finalWinGroup
       value: 
       objectReference: {fileID: 1438230788}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: EnemyMaxHealth
+      value: 
+      objectReference: {fileID: 756519041}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinButton
+      value: 
+      objectReference: {fileID: 147602751}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: MultiplierText
+      value: 
+      objectReference: {fileID: 1557748190}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: finalWinButton
       value: 
       objectReference: {fileID: 147602751}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: BackgroundImage
+      value: 
+      objectReference: {fileID: 622572584}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinTextOne
+      value: 
+      objectReference: {fileID: 553237172}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinTextTwo
+      value: 
+      objectReference: {fileID: 456085845}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: PlayerMaxHealth
+      value: 
+      objectReference: {fileID: 1137100700}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: backgroundImage
       value: 
@@ -200,17 +260,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 456085845}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: MatchResultGroup
+      value: 
+      objectReference: {fileID: 952013766}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinTextThree
+      value: 
+      objectReference: {fileID: 605816128}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: finalWinTextThree
       value: 
       objectReference: {fileID: 605816128}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: FinalWinBackground
+      value: 
+      objectReference: {fileID: 1455660585}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: InitialMatchResult
+      value: 
+      objectReference: {fileID: 1728352673}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: finalWinBackground
       value: 
       objectReference: {fileID: 1455660585}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: LevelBackgrounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: levelBackgrounds.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: 'LevelBackgrounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: -2806046462198627650, guid: 1c4701062cb7e7c49ad80f9ed78362f2, type: 3}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: 'LevelBackgrounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: -2110453027863244691, guid: d02cfb192e7836145b0b2979459d73a7, type: 3}
+    - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
+      propertyPath: 'LevelBackgrounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3673268120024318776, guid: e475532629db718449b2606d18ee6bb4, type: 3}
     - target: {fileID: 7309040402882686678, guid: 9ce9cbb22813af24295190865c615e7f, type: 3}
       propertyPath: 'levelBackgrounds.Array.data[0]'
       value: 
@@ -408,14 +500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa909f8bc6519a4e9d3e5b19c71bae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTutorialActive: 1
-  wagerConfirmed: 0
-  tutorialBox: {fileID: 1595935200}
-  tutorialUIText: {fileID: 1354590138}
-  hpArrow: {fileID: 609213374}
-  pointArrow: {fileID: 596312824}
+  IsTutorialActive: 0
+  WagerConfirmed: 0
+  TutorialBox: {fileID: 1595935200}
+  TutorialUIText: {fileID: 1354590138}
+  HpArrow: {fileID: 609213374}
+  PointArrow: {fileID: 596312824}
   CookieWagerParent: {fileID: 350812692}
-  playerField: {fileID: 397893056}
+  PlayerField: {fileID: 397893056}
 --- !u!4 &92647684
 Transform:
   m_ObjectHideFlags: 0
@@ -849,12 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e683741c731a419b747f396c3e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
-  handTransform: {fileID: 1982346832}
-  fanSpread: -8
-  horizontalSpacing: 100
-  verticalSpacing: 30
-  onHandCards: []
+  CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
+  HandTransform: {fileID: 1982346832}
+  _fanSpread: -8
+  _horizontalSpacing: 100
+  _verticalSpacing: 30
+  OnHandCards: []
 --- !u!1 &198715269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,9 +2252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3800881085cbd4984b98cdf483541c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectTableSidePrompt: {fileID: 7197695453772754929, guid: 3f1d8f435e080324dabd28fe59e3adc1, type: 3}
-  copyCardPrompt: {fileID: 8618264104518844708, guid: 836c30cb3ee52c04aa25bf51f52f804e, type: 3}
-  promptParent: {fileID: 1339163551}
+  SelectTableSidePrompt: {fileID: 7197695453772754929, guid: 3f1d8f435e080324dabd28fe59e3adc1, type: 3}
+  CopyCardPrompt: {fileID: 8618264104518844708, guid: 836c30cb3ee52c04aa25bf51f52f804e, type: 3}
+  PromptParent: {fileID: 1339163551}
 --- !u!4 &561812912
 Transform:
   m_ObjectHideFlags: 0
@@ -3200,6 +3292,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: FinalBossTransition
+      value: 
+      objectReference: {fileID: 2134441499}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
       propertyPath: finalBossTransition
       value: 
       objectReference: {fileID: 2134441499}
@@ -3267,13 +3363,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab995e2d4cb7284488ac8334421c52ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
-  handTransform: {fileID: 397893057}
-  fanSpread: 0
-  horizontalSpacing: 200
-  verticalSpacing: 0
-  totalCardValue: 0
-  fieldCards: []
+  CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
+  HandTransform: {fileID: 397893057}
+  _fanSpread: 0
+  _horizontalSpacing: 200
+  _verticalSpacing: 0
+  TotalCardValue: 0
+  FieldCards: []
 --- !u!1 &894160567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,13 +4056,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab995e2d4cb7284488ac8334421c52ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
-  handTransform: {fileID: 1244480136}
-  fanSpread: 0
-  horizontalSpacing: 200
-  verticalSpacing: 0
-  totalCardValue: 0
-  fieldCards: []
+  CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
+  HandTransform: {fileID: 1244480136}
+  _fanSpread: 0
+  _horizontalSpacing: 200
+  _verticalSpacing: 0
+  TotalCardValue: 0
+  FieldCards: []
 --- !u!1 &1260711149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,12 +4772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e683741c731a419b747f396c3e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
-  handTransform: {fileID: 2134426409}
-  fanSpread: 8
-  horizontalSpacing: 100
-  verticalSpacing: -30
-  onHandCards: []
+  CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
+  HandTransform: {fileID: 2134426409}
+  _fanSpread: -8
+  _horizontalSpacing: 100
+  _verticalSpacing: 30
+  OnHandCards: []
 --- !u!1 &1846380664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5454,9 +5550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256488c1eefd07644b2ca7b3deb88a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  background: {fileID: 35292909}
-  text: {fileID: 894160569}
+  Obj: {fileID: 2134441499}
+  Background: {fileID: 35292909}
+  Text: {fileID: 894160569}
 --- !u!1 &2140117019
 GameObject:
   m_ObjectHideFlags: 0

@@ -807,13 +807,33 @@ PrefabInstance:
       value: SceneManager
       objectReference: {fileID: 0}
     - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: ErrorMessage
+      value: 
+      objectReference: {fileID: 759837450}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
       propertyPath: errorMessage
       value: 
       objectReference: {fileID: 759837450}
     - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: Buttons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
       propertyPath: buttons.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: 'Buttons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2070327812}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: 'Buttons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 237336695}
+    - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
+      propertyPath: 'Buttons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 759020790}
     - target: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
       propertyPath: 'buttons.Array.data[0]'
       value: 
@@ -1204,14 +1224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa909f8bc6519a4e9d3e5b19c71bae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialManagerScript
-  isTutorialActive: 0
-  wagerConfirmed: 0
-  tutorialBox: {fileID: 2146013597}
-  tutorialUIText: {fileID: 2146013596}
-  hpArrow: {fileID: 0}
-  pointArrow: {fileID: 0}
+  IsTutorialActive: 0
+  WagerConfirmed: 0
+  TutorialBox: {fileID: 2146013597}
+  TutorialUIText: {fileID: 2146013596}
+  HpArrow: {fileID: 0}
+  PointArrow: {fileID: 0}
   CookieWagerParent: {fileID: 0}
-  playerField: {fileID: 0}
+  PlayerField: {fileID: 0}
 --- !u!1 &2070327810
 GameObject:
   m_ObjectHideFlags: 0

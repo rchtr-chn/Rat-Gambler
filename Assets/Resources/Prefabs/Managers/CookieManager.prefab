@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c085b3b0021a9c47840fb6f5a9b4355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 0}
-  playerCookies: 50
-  wageredCookies: 0
-  wagerMinimum: 10
-  cookieGroup: {fileID: 0}
-  cookieParent: {fileID: 0}
-  cookiePrefab: {fileID: 4816857046735830294, guid: 2d7dc91a4f86a204481796a68e4501dd, type: 3}
-  confirmWagerButton: {fileID: 0}
-  cookies: []
-  betPlaced: 0
+  ButtonText: {fileID: 0}
+  PlayerCookies: 50
+  WageredCookies: 0
+  WagerMinimum: 10
+  CookieGroup: {fileID: 0}
+  CookieParent: {fileID: 0}
+  CookiePrefab: {fileID: 4816857046735830294, guid: 2d7dc91a4f86a204481796a68e4501dd, type: 3}
+  ConfirmWagerButton: {fileID: 0}
+  Cookies: []
+  BetPlaced: 0

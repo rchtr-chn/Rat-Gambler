@@ -283,13 +283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab995e2d4cb7284488ac8334421c52ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 0}
-  handTransform: {fileID: 0}
-  fanSpread: 0
-  horizontalSpacing: 200
-  verticalSpacing: 30
-  totalCardValue: 0
-  fieldCards: []
+  CardPrefab: {fileID: 0}
+  HandTransform: {fileID: 0}
+  _fanSpread: 0
+  _horizontalSpacing: 200
+  _verticalSpacing: 30
+  TotalCardValue: 0
+  FieldCards: []
 --- !u!1 &52974644
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,12 +417,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e683741c731a419b747f396c3e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 1108917564105753837, guid: fc43a0a354ab08d439f4ad356af2da3e, type: 3}
-  handTransform: {fileID: 1858233328}
-  fanSpread: 0
-  horizontalSpacing: 100
-  verticalSpacing: 30
-  onHandCards: []
+  CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
+  HandTransform: {fileID: 1858233328}
+  _fanSpread: -8
+  _horizontalSpacing: 100
+  _verticalSpacing: 30
+  OnHandCards: []
 --- !u!1 &203614367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7725624915323460807, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8329563616655832599, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
       propertyPath: day
       value: 
@@ -1322,9 +1326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4354ad48660e5f34589630da508de28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handManager: {fileID: 79446139}
-  cookieManager: {fileID: 0}
-  shopCard: {fileID: 0}
+  HandManager: {fileID: 0}
+  CookieManager: {fileID: 0}
+  ShopCard: {fileID: 0}
 --- !u!114 &978334089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,16 +3100,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33a55748080f744699a1136b4c4bdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckManagerScript: {fileID: 0}
-  handManagerScript: {fileID: 0}
-  placeHolderCardText:
+  DeckManagerScript: {fileID: 0}
+  HandManagerScript: {fileID: 79446139}
+  PlaceHolderCardText:
   - {fileID: 1163809231}
   - {fileID: 534350221}
   - {fileID: 1323327799}
   - {fileID: 1079944393}
-  shopCardPrefab: {fileID: 1108917564105753837, guid: fc43a0a354ab08d439f4ad356af2da3e, type: 3}
-  audioManager: {fileID: 0}
-  cardPlaceHolders:
+  ShopCardPrefab: {fileID: 1108917564105753837, guid: fc43a0a354ab08d439f4ad356af2da3e, type: 3}
+  AudioManager: {fileID: 0}
+  CardPlaceHolders:
   - {fileID: 1742428969}
   - {fileID: 671887811}
   - {fileID: 1322590184}
@@ -3207,14 +3211,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa909f8bc6519a4e9d3e5b19c71bae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTutorialActive: 0
-  wagerConfirmed: 0
-  tutorialBox: {fileID: 525502626}
-  tutorialUIText: {fileID: 525502624}
-  hpArrow: {fileID: 0}
-  pointArrow: {fileID: 0}
+  IsTutorialActive: 0
+  WagerConfirmed: 0
+  TutorialBox: {fileID: 525502626}
+  TutorialUIText: {fileID: 525502624}
+  HpArrow: {fileID: 0}
+  PointArrow: {fileID: 0}
   CookieWagerParent: {fileID: 0}
-  playerField: {fileID: 0}
+  PlayerField: {fileID: 0}
 --- !u!4 &2025395132
 Transform:
   m_ObjectHideFlags: 0

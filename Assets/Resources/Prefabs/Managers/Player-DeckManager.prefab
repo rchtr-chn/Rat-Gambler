@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a44968d2a5cf934a8b72827949b424b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceDeck: []
-  playingDeck: []
-  startingHandSize: 3
-  maxHandSize: 7
-  currentHandSize: 0
+  ResourceDeck: []
+  PlayingDeck: []
+  _startingHandSize: 3
+  _maxHandSize: 7
+  CurrentHandSize: 0
+  AudioManager: {fileID: 0}

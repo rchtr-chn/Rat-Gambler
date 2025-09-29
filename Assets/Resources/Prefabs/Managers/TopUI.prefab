@@ -671,9 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00fafb21ef3944891186bf18721188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debt: {fileID: 8583122859394450635}
-  cookies: {fileID: 7487082020287717606}
-  day: {fileID: 8785714195147053167}
+  Debt: {fileID: 8719894475184099116}
+  Cookies: {fileID: 7487082020287717606}
+  Day: {fileID: 8785714195147053167}
 --- !u!1 &9192221552795700879
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a159c519163a24dbc57f8e94f739fe, type: 3}
   m_Name: Five-Clubs
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 0b3a92299c97dc64b808462159e57792, type: 3}
-  cardName: Ratmi Card 5
-  cardType: 01000000
-  cardPoints: 5
-  isPlayable: 1
-  cardEffect: {fileID: 0}
+  CardImage: {fileID: 21300000, guid: 0b3a92299c97dc64b808462159e57792, type: 3}
+  CardName: 5 Ratmi Card
+  CardType: 01000000
+  CardPoints: 5
+  IsPlayable: 0
+  CardEffect: {fileID: 0}

@@ -130,12 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45b2ff5670a0cb40a4f0d2b10c199fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  cardPoints: 0
-  isPlayable: 1
-  isCopied: 0
-  cardImage: {fileID: 5426751919464358145}
-  highlightImage: {fileID: 6618787867641547240}
+  CardData: {fileID: 0}
+  CardPoints: 0
+  IsPlayable: 1
+  IsCopied: 0
+  _cardImage: {fileID: 5426751919464358145}
+  HighlightImage: {fileID: 6618787867641547240}
 --- !u!61 &7831423699313762882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +144,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108917564105753837}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -167,7 +168,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +180,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 2.5, y: 3.5}
   m_EdgeRadius: 0
 --- !u!114 &6617806868442968794
@@ -193,12 +194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5ed1099c2ce9742bccf6279dae4e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectScale: 1.2
-  cardPlay: {x: 0, y: 1200}
-  playPos: {x: 0, y: 1200, z: 0}
-  highlightEffect: {fileID: 1090451894328987888}
-  playArrow: {fileID: 2827107900540168290}
-  lerpFactor: 0.1
+  AudioManager: {fileID: 0}
+  _selectScale: 1.2
+  CardPlay: {x: 0, y: 1000}
+  _playPos: {x: 0, y: 0, z: 0}
+  _highlightEffect: {fileID: 1090451894328987888}
+  _playArrow: {fileID: 2827107900540168290}
+  _lerpFactor: 0.1
 --- !u!114 &8023254602540985943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,10 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d47faf4d699c428bd557c6a68ef29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontView: {fileID: 3394895361289130305}
-  backView: {fileID: 5380258357938245547}
-  duration: 0.6
-  showFront: 1
+  _frontView: {fileID: 3394895361289130305}
+  _backView: {fileID: 5380258357938245547}
+  _duration: 0.6
+  ShowFront: 1
 --- !u!222 &757985449342656676
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -247,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8243b896fcbd2044aa6b2845e6117371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  Cost: 10
 --- !u!1 &2827107900540168290
 GameObject:
   m_ObjectHideFlags: 0

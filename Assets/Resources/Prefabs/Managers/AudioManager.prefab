@@ -44,17 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edf19f9b6fd38940a0bd83819396bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  effectSource: {fileID: 0}
-  hoverCard: {fileID: 0}
-  shuffleDeck: {fileID: 0}
-  drawCard: {fileID: 0}
-  playCard: {fileID: 0}
-  buttonPress: {fileID: 0}
-  winSound: {fileID: 0}
-  loseSound: {fileID: 0}
-  trashCard: {fileID: 0}
-  buyCard: {fileID: 0}
-  startMenuBGM: {fileID: 0}
-  levelSelectBGM: {fileID: 0}
-  mainGameplayBGM: {fileID: 0}
+  MusicSource: {fileID: 0}
+  EffectSource: {fileID: 0}
+  HoverCard: {fileID: 8300000, guid: 21acf71c497be734a90b381d5942df23, type: 3}
+  ShuffleDeck: {fileID: 8300000, guid: 95bdeed918c7b894e85d0edfcea6cb19, type: 3}
+  DrawCard: {fileID: 8300000, guid: d280ce4d438b04f43ba2a0dfae804bac, type: 3}
+  PlayCard: {fileID: 8300000, guid: d764ac8a5e486bf459cf879c56837de7, type: 3}
+  ButtonPress: {fileID: 8300000, guid: cec6aea22efeda9438abaca06d50a9a7, type: 3}
+  WinSound: {fileID: 8300000, guid: ca5f5d9410335144bb4cba3b914ba51f, type: 3}
+  LoseSound: {fileID: 8300000, guid: b2f2a99368d1caf40b8a0226b994b97a, type: 3}
+  TrashCard: {fileID: 8300000, guid: e26fd9ddd4dd4e84dbc8fe878ff43df3, type: 3}
+  BuyCard: {fileID: 8300000, guid: a1e54f166b951e547a9c70e7937e6150, type: 3}
+  StartMenuBGM: {fileID: 8300000, guid: 200ac8b65853fed4683fa028815c359f, type: 3}
+  LevelSelectBGM: {fileID: 8300000, guid: 36b176a7216dafb4fa60d92c858a5381, type: 3}
+  MainGameplayBGM: {fileID: 8300000, guid: 6c4c23dc12dcf224ba844bc80f33fe3c, type: 3}

@@ -211,6 +211,18 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2211143111048993548, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: _enemyMaxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211143111048993548, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: _playerMaxHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211143111048993548, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: SelectedDifficulty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211143111048993548, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: selectedDifficulty
       value: 1
       objectReference: {fileID: 0}
@@ -259,9 +271,25 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: BuyCard
+      value: 
+      objectReference: {fileID: 8300000, guid: a1e54f166b951e547a9c70e7937e6150, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: buyCard
       value: 
       objectReference: {fileID: 8300000, guid: a1e54f166b951e547a9c70e7937e6150, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: DrawCard
+      value: 
+      objectReference: {fileID: 8300000, guid: d280ce4d438b04f43ba2a0dfae804bac, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: PlayCard
+      value: 
+      objectReference: {fileID: 8300000, guid: d764ac8a5e486bf459cf879c56837de7, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: WinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca5f5d9410335144bb4cba3b914ba51f, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: drawCard
       value: 
@@ -275,6 +303,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ca5f5d9410335144bb4cba3b914ba51f, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: HoverCard
+      value: 
+      objectReference: {fileID: 8300000, guid: 21acf71c497be734a90b381d5942df23, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: LoseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b2f2a99368d1caf40b8a0226b994b97a, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: TrashCard
+      value: 
+      objectReference: {fileID: 8300000, guid: e26fd9ddd4dd4e84dbc8fe878ff43df3, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: hoverCard
       value: 
       objectReference: {fileID: 8300000, guid: 21acf71c497be734a90b381d5942df23, type: 3}
@@ -286,6 +326,18 @@ PrefabInstance:
       propertyPath: trashCard
       value: 
       objectReference: {fileID: 8300000, guid: e26fd9ddd4dd4e84dbc8fe878ff43df3, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: ButtonPress
+      value: 
+      objectReference: {fileID: 8300000, guid: cec6aea22efeda9438abaca06d50a9a7, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: MusicSource
+      value: 
+      objectReference: {fileID: 651032685}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: ShuffleDeck
+      value: 
+      objectReference: {fileID: 8300000, guid: 95bdeed918c7b894e85d0edfcea6cb19, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: buttonPress
       value: 
@@ -299,6 +351,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 95bdeed918c7b894e85d0edfcea6cb19, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: EffectSource
+      value: 
+      objectReference: {fileID: 1197220568}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: StartMenuBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 200ac8b65853fed4683fa028815c359f, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: effectSource
       value: 
       objectReference: {fileID: 1197220568}
@@ -307,9 +367,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 200ac8b65853fed4683fa028815c359f, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: LevelSelectBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 36b176a7216dafb4fa60d92c858a5381, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: levelSelectBGM
       value: 
       objectReference: {fileID: 8300000, guid: 36b176a7216dafb4fa60d92c858a5381, type: 3}
+    - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
+      propertyPath: MainGameplayBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4c23dc12dcf224ba844bc80f33fe3c, type: 3}
     - target: {fileID: 5682157070740573434, guid: 376c42c6b31adda4db82097ec5dd5618, type: 3}
       propertyPath: mainGameplayBGM
       value: 
@@ -449,8 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57981ae35442314d94c2a37cc43e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 725517588}
-  audioManager: {fileID: 165731931}
+  GameManager: {fileID: 725517588}
+  AudioManager: {fileID: 165731931}
 --- !u!4 &207952318
 Transform:
   m_ObjectHideFlags: 0

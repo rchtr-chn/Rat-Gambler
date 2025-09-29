@@ -25,6 +25,8 @@ public class GameManagerScript : MonoBehaviour
     public bool PlayerOutOfMoves = false;
     public bool EnemyOutOfMoves = false;
 
+    public bool IsPlayerTurn = true;
+
     private Coroutine _roundCoroutine;
 
     public OptionsManagerScript OptionsManagerScript { get; private set; }
@@ -60,12 +62,6 @@ public class GameManagerScript : MonoBehaviour
     {
         get { return _difficultyLevel; }
         set { _difficultyLevel = Mathf.Clamp(value, 1, 5); } // Clamp difficulty between 1 and 10
-    }
-
-    public bool IsPlayerTurn
-    {
-        get { return IsPlayerTurn; }
-        set { IsPlayerTurn = value; }
     }
 
     private void Awake()
@@ -231,8 +227,6 @@ public class GameManagerScript : MonoBehaviour
             field = GameObject.Find("EnemyFieldManager").GetComponent<FieldManagerScript>();
         }
 
-
-        
         StartCoroutine(HandleTurn(hand, field));
     }
 
@@ -280,7 +274,8 @@ public class GameManagerScript : MonoBehaviour
             if (legalCards.Count > 0)
             {
                 // Enemy's turn - decide and play a card
-                EnemyTurn(hand, field, legalCards);
+                StartCoroutine(EnemyTurnSequence(hand, field, legalCards));
+                //EnemyTurn(hand, field, legalCards);
             }
             else
             {
@@ -315,6 +310,17 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    IEnumerator EnemyTurnSequence(HandManagerScript hand, FieldManagerScript field, List<Card> allCards)
+    {
+        yield return new WaitForSeconds(0.5f); // small delay before enemy plays
+
+        EnemyTurn(hand, field, allCards);
+
+        yield return new WaitForSeconds(1.5f); // small delay after enemy plays
+
+        StartPlayerTurn();
+    }
+
     void EnemyTurn(HandManagerScript hand, FieldManagerScript field, List<Card> allCards)
     {
         // Always find the best card
@@ -339,8 +345,6 @@ public class GameManagerScript : MonoBehaviour
         // Now you can actually play chosenCard here
         hand.RemoveCardFromHand(chosenCard);
         field.AddCardToField(chosenCard);
-
-        StartPlayerTurn();
     }
 
     // Both players are out of moves, reset for next round
