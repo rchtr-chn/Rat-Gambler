@@ -47,8 +47,8 @@
   ```
 <h2>💡 Contributions</h2>
 
-  As the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, level select system, and etc.
-  I dedicated around 30 hours in total to this project.
+  I dedicated around 30 hours in total to this project, developing all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, level select system, and etc.
+  
 
 <h2>⬇️ Game Pages</h2>
   itch.io: https://rchtr-chn.itch.io/rat-gambler
