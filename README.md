@@ -7,6 +7,20 @@
   One last hand… one last cookie… one last chance at financial freedom.<br/>
   Will you claw your way out of debt, or will the mob bury you under a mountain of crumbs?
 
+<h2>📜 Scripts</h2>
+
+  | Script | Description |
+  | ------ | ----------- |
+  | `DeckManagerScript.cs` | Manages starting deck and saves any modification done to deck by player |
+  | `HandManagerScript.cs` | Receives cards from `DeckManagerScript.cs` to be drawn on hand and returned to when needed|
+  | `GameManagerScript.cs` | Organizes and centralized other minor managers and manages the turn-based system |
+  | `ShopManagerScript.cs` | Manages the shop's cards to be displayed and sold to the player |
+  | `Card.cs` | Blueprint for SOs that will carry a card's value and the potential card effect |
+  | etc. |
+  
+<h2>💡 My Contributions</h2>
+
+  As the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, level select system, and etc.
 
 <h2>⬇️ Game Pages</h2>
   itch.io: https://rchtr-chn.itch.io/rat-gambler
@@ -29,20 +43,6 @@
   - Sony Aliem (Game designer and artist)
   - <a href="https://www.behance.net/epenaja">Melvern Sjah</a> (Game designer and artist)
 
-<h2>💡 My Contributions</h2>
-
-  As the sole programmer of this project, I am tasked to make all of the mechanics that make the game function as intended, such as the card system, the turn based system, the shop system, etc.
-
-<h2>📜 Scripts</h2>
-
-  | Script | Description |
-  | ------ | ----------- |
-  | `DeckManagerScript.cs` | Manages starting deck and saves any modification done to deck by player |
-  | `HandManagerScript.cs` | Receives cards from `DeckManagerScript.cs` to be drawn on hand and returned to when needed|
-  | `GameManagerScript.cs` | Organizes and centralized other minor managers and manages the turn-based system |
-  | `ShopManagerScript.cs` | Manages the shop's cards to be displayed and sold to the player |
-  | `Card.cs` | Blueprint for SOs that will carry a card's value and the potential card effect |
-  | etc. |
 
 <h2>📂 Folder Descriptions</h2>
 
