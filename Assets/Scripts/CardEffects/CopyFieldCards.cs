@@ -5,9 +5,9 @@ using UnityEngine;
 public class CopyFieldCards : CardEffect
 {
     EffectManager effectManager;
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         effectManager = GameObject.Find("EffectManager").GetComponent<EffectManager>();
-        effectManager.StartCoroutine(effectManager.CopyCardEffect());
+        effectManager.StartCoroutine(effectManager.CopyCardEffect(t));
     }
 }

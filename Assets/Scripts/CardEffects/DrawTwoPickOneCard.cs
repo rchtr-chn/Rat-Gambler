@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DrawTwoPickOneCardEffect", menuName = "Card Effects/Draw Two Pick One Card")]
 public class DrawTwoPickOneCard : CardEffect
 {
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         DeckManagerScript deckManager = GameObject.FindGameObjectWithTag("PlayerDeckManager").GetComponent<DeckManagerScript>();
         HandManagerScript handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
@@ -20,6 +20,6 @@ public class DrawTwoPickOneCard : CardEffect
         }
 
         GameManagerScript gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        gameManager.EndPlayerTurn();
+        gameManager.PlayerPlayedCard(t);
     }
 }

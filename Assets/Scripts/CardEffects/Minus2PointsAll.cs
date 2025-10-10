@@ -4,13 +4,13 @@ using UnityEngine;
 public class Minus2PointsAll : CardEffect
 {
     private GameManagerScript _gameManager;
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         _gameManager.AdditionalEnemyPoints -= 2;
         _gameManager.AdditionalPlayerPoints -= 2;
 
-        _gameManager.EndPlayerTurn();
+        _gameManager.PlayerPlayedCard(t);
     }
 }
     

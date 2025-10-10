@@ -5,10 +5,10 @@ using UnityEngine;
 public class Minus3PointsAny : CardEffect
 {
     private EffectManager _effectManager;
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         _effectManager = GameObject.Find("EffectManager").GetComponent<EffectManager>();
-        _effectManager.StartCoroutine(_effectManager.Minus3PointsAnyCoroutine());
+        _effectManager.StartCoroutine(_effectManager.Minus3PointsAnyCoroutine(t));
 
     }
 }

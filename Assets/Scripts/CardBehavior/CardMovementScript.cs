@@ -210,11 +210,11 @@ public class CardMovementScript : MonoBehaviour, IDragHandler, IPointerDownHandl
 
         if (target.CardType.Contains(Card.CardTypes.Power))
         {
-            target.CardEffect.ApplyEffect();
+            target.CardEffect.ApplyEffect(target);
         }
         else
         {
-            _gameManager.EndPlayerTurn();
+            _gameManager.PlayerPlayedCard(target);
         }
     }
 }

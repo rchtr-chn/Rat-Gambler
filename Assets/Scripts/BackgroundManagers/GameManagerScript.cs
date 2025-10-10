@@ -234,79 +234,91 @@ public class GameManagerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // small delay so it doesn’t instantly loop
 
-        CheckForLegalPlay(hand, field);
+        if(!IsPlayerTurn)
+        {
+            CheckForLegalPlay(hand, field);
+        }
+        else
+        {
+            CheckForPlayerStuck(hand, field);
+        }
+    }
+
+    public void PlayerPlayedCard(Card cardPlayed)
+    {
+        HandManagerScript hand = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
+        FieldManagerScript field = GameObject.Find("PlayerFieldManager").GetComponent<FieldManagerScript>();
+
+        List<Card> legalCards = new List<Card>();
+        for (int i = 0; i < hand.OnHandCards.Count; i++)
+        {
+            Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
+            if (field.TotalCardValue < 21 || card.CardType.Contains(Card.CardTypes.Power))
+            {
+                legalCards.Add(card);
+            }
+        }
+
+        if (legalCards.Count == 0)
+        {
+            // Player has no legal plays, ending turn.
+            PlayerOutOfMoves = true;
+        }
+        EndPlayerTurn();
+    }
+
+    void CheckForPlayerStuck(HandManagerScript hand, FieldManagerScript field)
+    {
+        List<Card> legalCards = new List<Card>();
+
+        for (int i = 0; i < hand.OnHandCards.Count; i++)
+        {
+            Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
+
+            if (field.TotalCardValue < 21 || card.CardType.Contains(Card.CardTypes.Power))
+            {
+                legalCards.Add(card);
+            }
+        }
+
+        if (hand.OnHandCards.Count == 0 || legalCards.Count == 0)
+        {
+            PlayerOutOfMoves = true;
+            EndPlayerTurn();
+        }
     }
 
     void CheckForLegalPlay(HandManagerScript hand, FieldManagerScript field)
     {
         if(hand.OnHandCards.Count == 0)
         {
-            // No cards in hand, end turn immediately
-            if (IsPlayerTurn)
-            {
-                PlayerOutOfMoves = true;
-                EndPlayerTurn();
-            }
-            else
-            {
-                EnemyOutOfMoves = true;
-                Debug.Log("Enemy has no cards in hand, ending turn.");
-                StartPlayerTurn();
-            }
+            EnemyOutOfMoves = true;
+            Debug.Log("Enemy has no cards in hand, ending turn.");
+            StartPlayerTurn();
             return;
         }
 
         //checks for any legal poker cards
-
         List<Card> legalCards = new List<Card>();
-
-        if (!IsPlayerTurn)
+        for (int i = 0; i < hand.OnHandCards.Count; i++)
         {
-            for (int i = 0; i < hand.OnHandCards.Count; i++)
+            Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
+            if (field.TotalCardValue < 21)
             {
-                Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
-                if (field.TotalCardValue < 21)
-                {
-                    legalCards.Add(card);
-                }
+                legalCards.Add(card);
             }
+        }
 
-            if (legalCards.Count > 0)
-            {
-                // Enemy's turn - decide and play a card
-                StartCoroutine(EnemyTurnSequence(hand, field, legalCards));
-                //EnemyTurn(hand, field, legalCards);
-            }
-            else
-            {
-                // Enemy has no legal plays, ending turn.
-                EnemyOutOfMoves = true;
-                StartPlayerTurn();
-            }
+        if (legalCards.Count > 0)
+        {
+            // Enemy's turn - decide and play a card
+            StartCoroutine(EnemyTurnSequence(hand, field, legalCards));
         }
         else
         {
-            for (int i=0;i<hand.OnHandCards.Count;i++)
-            {
-                Card card = hand.OnHandCards[i].GetComponent<CardDisplay>().CardData;
-                if (field.TotalCardValue < 21 || card.CardType.Contains(Card.CardTypes.Power))
-                {
-                    legalCards.Add(card);
-                }
-            }
-
-            if (legalCards.Count > 0)
-            {
-                // Player has legal plays, allow them to continue.
-                return;
-            }
-            else
-            {
-                // Player has no legal plays, ending turn.
-                PlayerOutOfMoves = true;
-                Debug.Log("Player has no legal plays, ending turn.");
-                EndPlayerTurn();
-            }
+            // Enemy has no legal plays, ending turn.
+            EnemyOutOfMoves = true;
+            StartPlayerTurn();
         }
     }
 

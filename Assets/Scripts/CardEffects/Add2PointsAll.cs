@@ -5,12 +5,12 @@ using UnityEngine;
 public class Add2PointsAll : CardEffect
 {
     private GameManagerScript GameManager;
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         GameManager.AdditionalEnemyPoints += 2;
         GameManager.AdditionalPlayerPoints += 2;
 
-        GameManager.EndPlayerTurn();
+        GameManager.PlayerPlayedCard(t);
     }
 }

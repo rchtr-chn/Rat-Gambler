@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AllDrawOneCardEffect", menuName = "Card Effects/All Draw One Card")]
 public class AllDrawOneCard : CardEffect
 {
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         DeckManagerScript deckManager = GameObject.FindGameObjectWithTag("PlayerDeckManager").GetComponent<DeckManagerScript>();
         HandManagerScript handManager = GameObject.Find("PlayerHandManager").GetComponent<HandManagerScript>();
@@ -15,6 +15,6 @@ public class AllDrawOneCard : CardEffect
         enemyDeckManager.DrawCardToHand(enemyHandManager);
 
         GameManagerScript gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        gameManager.EndPlayerTurn();
+        gameManager.PlayerPlayedCard(t);
     }
 }

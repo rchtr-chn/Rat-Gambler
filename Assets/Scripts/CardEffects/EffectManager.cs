@@ -9,7 +9,7 @@ public class EffectManager : MonoBehaviour
     public GameObject SelectTableSidePrompt;
     public GameObject CopyCardPrompt;
     public GameObject PromptParent;
-    public IEnumerator Add3PointsAnyCoroutine()
+    public IEnumerator Add3PointsAnyCoroutine(Card t)
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         GameObject promptObj = Instantiate(SelectTableSidePrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
@@ -36,10 +36,10 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
 
-        _gameManager.EndPlayerTurn();
+        _gameManager.PlayerPlayedCard(t);
     }
 
-    public IEnumerator Minus3PointsAnyCoroutine()
+    public IEnumerator Minus3PointsAnyCoroutine(Card t)
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         GameObject promptObj = Instantiate(SelectTableSidePrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
@@ -66,10 +66,10 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
 
-        _gameManager.EndPlayerTurn();
+        _gameManager.PlayerPlayedCard(t);
     }
 
-    public IEnumerator CopyCardEffect()
+    public IEnumerator CopyCardEffect(Card t)
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         GameObject promptObj = Instantiate(CopyCardPrompt, Vector3.zero, Quaternion.identity, PromptParent.transform);
@@ -113,7 +113,7 @@ public class EffectManager : MonoBehaviour
             yield return null;
         }
         
-        _gameManager.EndPlayerTurn();
+        _gameManager.PlayerPlayedCard(t);
     }
 
     //public IEnumerator SwapCards()

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Add3PointsAny : CardEffect
 {
     EffectManager effectManager;
-    public override void ApplyEffect()
+    public override void ApplyEffect(Card t)
     {
         Debug.Log("Adding 3 points to any player...");
         effectManager = GameObject.Find("EffectManager").GetComponent<EffectManager>();
-        effectManager.StartCoroutine(effectManager.Add3PointsAnyCoroutine());
+        effectManager.StartCoroutine(effectManager.Add3PointsAnyCoroutine(t));
     }
 }
