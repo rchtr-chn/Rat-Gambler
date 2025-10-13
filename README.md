@@ -1,20 +1,4 @@
-<table width="100%">
-  <tr>
-    <!-- Top large gif -->
-    <td colspan="2" align="center">
-      <img src="https://github.com/rchtr-chn/Rat-Gambler/raw/main/readme-gifs/gif-2.gif" width="100%"/>
-    </td>
-  </tr>
-  <tr>
-    <!-- Bottom two gifs -->
-    <td align="center" width="50%">
-      <img src="https://github.com/rchtr-chn/Rat-Gambler/raw/main/readme-gifs/gif-3.gif" width="100%"/>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://github.com/rchtr-chn/Rat-Gambler/raw/main/readme-gifs/gif-1.gif" width="100%"/>
-    </td>
-  </tr>
-</table>
+
 
 <h2>🐀 Rat Gambler</h2>
   <img width=200px align="left" src=https://img.itch.zone/aW1nLzIyOTc2MDY5LnBuZw==/original/7pJkfp.png>
