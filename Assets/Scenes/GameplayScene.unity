@@ -945,7 +945,7 @@ MonoBehaviour:
   HandTransform: {fileID: 1982346832}
   _fanSpread: -8
   _horizontalSpacing: 100
-  _verticalSpacing: 30
+  _verticalSpacing: -30
   OnHandCards: []
 --- !u!1 &198715269
 GameObject:
@@ -4774,7 +4774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardPrefab: {fileID: 1108917564105753837, guid: e4f58fd3b8cdf1346a9291c8d76b1d56, type: 3}
   HandTransform: {fileID: 2134426409}
-  _fanSpread: -8
+  _fanSpread: 8
   _horizontalSpacing: 100
   _verticalSpacing: 30
   OnHandCards: []

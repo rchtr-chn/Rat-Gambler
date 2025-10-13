@@ -1143,6 +1143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8329563616655832599, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
+      propertyPath: Debt
+      value: 
+      objectReference: {fileID: 1925004247}
     - target: {fileID: 8523101083049839452, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
       propertyPath: m_Color.b
       value: 0.25882354
@@ -1169,6 +1173,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3245146427244930239, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
   m_PrefabInstance: {fileID: 1925004245}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925004247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8583122859394450635, guid: 2a0f427d058193340b2fa0ef3d0ccc19, type: 3}
+  m_PrefabInstance: {fileID: 1925004245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2046371208 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8097378657189841418, guid: d5d0734b0243f2f47981e58fb552c4ab, type: 3}
